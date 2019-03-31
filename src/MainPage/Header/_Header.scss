@@ -1,0 +1,47 @@
+.headerMain {
+    @include flex(row, flex-start, center);
+}
+
+.nameContainer {
+    // width: 50px;
+    // height:50px;
+    background-color:#FFF;
+    // border:2px solid black;
+    // margin: 1rem 0 0 4rem;
+    @include flex(column, center, center);
+    text-align:center;
+    // padding: 10px;
+    // border-radius:50%;
+    // overflow:hidden;
+    // transition: .1s all linear;
+}
+
+.headerMain h1 {
+    @include font(2.5rem, 300);
+    width: 100%;
+
+}
+
+
+.navBackground {
+    width: 10px;
+    height:10px;
+    background-color: rgba(0,0,0,.7);
+    transition:.5s all linear;
+    position:absolute;
+    // top:90px;
+    // left:90px;
+    border-radius:100%;
+    z-index:-1;
+}
+
+// .nameContainer:hover .navBackground{
+//     transform:scale(150, 150);
+//     // left:0;
+// }
+
+.nameContainer:hover {
+    background-color:black;
+    color:#FFF;
+
+}

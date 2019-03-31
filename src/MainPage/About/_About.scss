@@ -1,0 +1,41 @@
+.aboutWrapper {
+    margin:5rem 4rem 0 10rem;
+    @include flex (row, center, center);
+}
+
+.headshotContainer {
+    width: 500px;
+    height: 500px; 
+    @include flex(column, center, center);
+   
+
+
+
+    img{
+        width: 100%;
+        border:1px solid black;
+        padding: 10px;
+
+    //    &::after {
+    //        content:'hello world';
+    //         background-color:black;
+    //         display:block;
+    //         height:20%;
+    //         width:100%;
+           
+    //    }
+
+    }
+}
+
+.aboutInfo {
+    padding-left:4rem;
+    width: 80%;
+    letter-spacing:1.3px;
+    line-height: 1.6rem;
+
+    & p:first-of-type {
+        margin-bottom: 1.3rem;
+    }
+}
+

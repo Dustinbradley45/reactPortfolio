@@ -1,33 +1,710 @@
-.App {
+body {
+  font-size: 125%;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+, h6,
+p,
+a,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.visually-hidden {
+  /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.loadingScreenWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loadingScreenWrapper h1 {
+  font-size: 5rem;
+  font-weight: 300;
+  margin-top: 20%;
+  -webkit-animation: fadeIn .5s linear;
+          animation: fadeIn .5s linear;
+}
+
+.projectName {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  justify-self: flex-end;
+  position: relative;
+  margin-top: 22%;
+  padding-left: 2rem;
+  -webkit-animation: fadeOut .5s linear;
+          animation: fadeOut .5s linear;
+}
+
+.projectName h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  -webkit-animation: slideUpTwo 1s linear;
+          animation: slideUpTwo 1s linear;
+  margin: 0;
+  padding: 0;
+}
+
+.loadingDot {
+  -webkit-animation: fadeIn .1s linear;
+          animation: fadeIn .1s linear;
+}
+
+.loadingDotOne {
+  -webkit-animation-delay: 1.3s infinite;
+          animation-delay: 1.3s infinite;
+}
+
+.loadingDotTwo {
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+}
+
+.loadingDotThree {
+  -webkit-animation-delay: 3.3s;
+          animation-delay: 3.3s;
+}
+
+.toMainPage {
+  text-decoration: none;
+  color: black;
+  border: none;
+  background: transparent;
+  font-size: 2rem;
+  -webkit-animation: fadeIn .5s linear;
+          animation: fadeIn .5s linear;
+}
+
+.toMainPage::after {
+  content: "";
+  width: 2rem;
+  height: 2px;
+  display: block;
+  background-color: black;
+  opacity: 0;
+}
+
+.toMainPage:hover:after,
+.toMainPage:focus:after,
+.toMainPage:active:after {
+  opacity: 1;
+  width: 100%;
+  -webkit-transition: .1s all linear;
+  transition: .1s all linear;
+}
+
+@-webkit-keyframes slideUpOne {
+  0% {
+    -webkit-transform: translateY(400px);
+            transform: translateY(400px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideUpOne {
+  0% {
+    -webkit-transform: translateY(400px);
+            transform: translateY(400px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideUpTwo {
+  0% {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+  50% {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  80% {
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideUpTwo {
+  0% {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+  50% {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  80% {
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.headerMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nameContainer {
+  background-color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.headerMain h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navBackground {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: .5s all linear;
+  transition: .5s all linear;
+  position: absolute;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.nameContainer:hover {
+  background-color: black;
+  color: #FFF;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+nav p {
+  text-align: center;
+  margin-left: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.mainNav {
+  height: 100vh;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  padding: 10px;
+}
+
+.mainNav li {
+  list-style: none;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  letter-spacing: 1.3px;
+  -webkit-animation: navSlideIn .3s linear;
+          animation: navSlideIn .3s linear;
+}
+
+.mainNav button {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2rem 0;
+}
+
+.mainNav button:after {
+  content: "";
+  display: block;
+  background-color: black;
+  width: 1rem;
+  height: 2px;
+  opacity: 0;
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+}
+
+.mainNav button:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+.navLogoWrapper {
+  width: 100px;
+  height: 100px;
+  background-color: #FFF;
+  border-radius: 100%;
+  border: 2px solid #000;
+}
+
+.navigationLinks {
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  padding: 0;
+  margin: 0;
+}
+
+@-webkit-keyframes navSlideIn {
+  0% {
+    -webkit-transform: translateX(-200px) rotate(-90deg);
+            transform: translateX(-200px) rotate(-90deg);
   }
-  to {
-    transform: rotate(360deg);
+  0% {
+    -webkit-transform: translateX(0) rotate(-45deg);
+            transform: translateX(0) rotate(-45deg);
   }
 }
+
+@keyframes navSlideIn {
+  0% {
+    -webkit-transform: translateX(-200px) rotate(-90deg);
+            transform: translateX(-200px) rotate(-90deg);
+  }
+  0% {
+    -webkit-transform: translateX(0) rotate(-45deg);
+            transform: translateX(0) rotate(-45deg);
+  }
+}
+
+.landingPageWrapper {
+  margin-top: 15rem;
+  text-align: center;
+}
+
+.landingPageWrapper h1 {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+.landingPageWrapper h2 {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.landingPageWrapper h3 {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.aboutWrapper {
+  margin: 5rem 4rem 0 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headshotContainer {
+  width: 500px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headshotContainer img {
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.aboutInfo {
+  padding-left: 4rem;
+  width: 80%;
+  letter-spacing: 1.3px;
+  line-height: 1.6rem;
+}
+
+.aboutInfo p:first-of-type {
+  margin-bottom: 1.3rem;
+}
+
+.skillsWrapper {
+  margin: 10rem 0 0 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.iconWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  margin-top: 10rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.iconContainer {
+  width: calc(20% - 2rem);
+  height: 100px;
+  padding: 1rem;
+  margin: 2rem;
+  text-align: center;
+  letter-spacing: 1.3px;
+}
+
+.iconContainer img {
+  width: 100%;
+  opacity: .6;
+}
+
+.iconContainer img:hover {
+  opacity: 1;
+}
+
+.educationInfo {
+  width: 70%;
+  letter-spacing: 1.4px;
+}
+
+.educationInfo h2 {
+  padding-bottom: 1rem;
+  letter-spacing: 1.6px;
+}
+
+.educationInfo h3 {
+  padding-bottom: .5rem;
+}
+
+.educationInfo p {
+  line-height: 1.6rem;
+}
+
+.stackToggle {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: .5rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.stackToggle:hover, .stackToggle:focus, .stackToggle:active {
+  -webkit-box-shadow: 0px 0px 5px 0px black;
+          box-shadow: 0px 0px 5px 0px black;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  margin-top: 10rem;
+  width: 40%;
+  height: 50vh;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+}
+
+form input {
+  margin: .5rem 0;
+  padding: .5rem 0;
+  border: none;
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  padding-left: 5px;
+}
+
+form input:focus, form input:active {
+  -webkit-box-shadow: 0px 0px 5px 0px black;
+          box-shadow: 0px 0px 5px 0px black;
+}
+
+form input[type="email"] {
+  width: calc( 80% - .5rem);
+}
+
+form .nameBox {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form .nameBox input {
+  width: 50%;
+}
+
+form .nameBox input[id="firstName"] {
+  margin-right: .5rem;
+}
+
+form .nameBox input[id="lastName"] {
+  margin-left: .5rem;
+}
+
+form button {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: .5rem;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  width: 80%;
+}
+
+form button:hover, form button:focus, form button:active {
+  -webkit-box-shadow: 0px 0px 5px 0px black;
+          box-shadow: 0px 0px 5px 0px black;
+}
+
+form:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px black;
+          box-shadow: 0px 0px 5px 0px black;
+}
+
+form textarea {
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  width: calc(80% - 1rem);
+  border: none;
+  background-color: transparent;
+  padding: .5rem;
+}
+
+form textarea:focus, form textarea:active {
+  -webkit-box-shadow: 0px 0px 5px 0px black;
+          box-shadow: 0px 0px 5px 0px black;
+}
+
+.portfolioWrapper {
+  margin-left: 10rem;
+}
+
+.projectOneWrapper,
+.projectTwoWrapper,
+.projectThreeWrapper,
+.projectFourWrapper,
+.projectFiveWrapper,
+.projectSixWrapper {
+  width: 80%;
+  outline: 2px solid blue;
+}
+
+.projectTwoWrapper,
+.projectFourWrapper,
+.projectSixWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=App.css.map */

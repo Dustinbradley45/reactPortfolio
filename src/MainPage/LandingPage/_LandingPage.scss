@@ -1,0 +1,16 @@
+.landingPageWrapper {
+    margin-top:15rem;
+    text-align:center;
+    
+    h1{
+        @include font(4rem, 200);
+        
+    }
+
+    h2 {
+         @include font(3rem, 200);
+    }
+    h3 {
+         @include font(2rem, 200);
+    }
+}

@@ -1,0 +1,19 @@
+.portfolioWrapper {
+    margin-left: 10rem;
+}
+
+.projectOneWrapper,
+.projectTwoWrapper,
+.projectThreeWrapper,
+.projectFourWrapper,
+.projectFiveWrapper,
+.projectSixWrapper {
+    width:80%;
+    outline:2px solid blue;
+}
+
+.projectTwoWrapper,
+.projectFourWrapper,
+.projectSixWrapper {
+    @include flex(row-reverse, center, center);
+}

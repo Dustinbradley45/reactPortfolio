@@ -1,0 +1,118 @@
+
+
+
+.loadingScreenWrapper {
+    @include flex(column, center, center);
+
+    & h1 {
+        @include font(5rem, 300);
+        margin-top:20%;
+        animation:fadeIn .5s linear;
+
+    }
+}
+
+
+
+.projectName {
+    align-self:flex-start;
+    justify-self: flex-end;
+    position:relative;
+    margin-top:22%;
+    padding-left:2rem;
+    animation:fadeOut .5s linear
+}
+
+.projectName h3 {
+    @include font(2rem, 300);
+    animation:slideUpTwo 1s linear;
+    margin:0;
+    padding:0;
+}
+.loadingDot {
+    animation: fadeIn .1s linear ;
+    // opacity:0;
+}
+
+.loadingDotOne {
+    animation-delay:1.3s infinite;
+}
+.loadingDotTwo {
+    animation-delay: 2.3s;
+}
+.loadingDotThree {
+    animation-delay: 3.3s;
+}
+
+.toMainPage {
+    text-decoration:none;
+    color:black;
+    border:none;
+    background:transparent;
+    font-size:2rem;
+    animation:fadeIn .5s linear;
+}
+
+.toMainPage::after {
+    content:"";
+    width: 2rem;
+    height: 2px;
+    display:block;
+    background-color:black;
+    opacity:0;
+
+}
+   
+.toMainPage:hover:after,
+.toMainPage:focus:after,
+.toMainPage:active:after {
+    opacity: 1;
+    width:100%;
+    transition: .1s all linear;
+
+}
+
+
+
+@keyframes slideUpOne {
+    0% {
+        transform:translateY(400px);
+    }
+    100% {
+        transform:translateY(0);
+    }
+}
+@keyframes slideUpTwo {
+    0% {
+        transform:translateY(200px);
+    }
+    50% {
+        animation-play-state: paused;
+    }
+    80% {
+         animation-play-state: running;
+    }
+    100% {
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:100%;
+    }
+}
+
+@keyframes fadeOut {
+      0% {
+          opacity: 100%;
+      }
+
+      100% {
+          opacity: 0;
+      }
+}
+

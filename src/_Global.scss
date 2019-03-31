@@ -1,0 +1,36 @@
+body {
+    font-size: 125%;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+,h6,
+p,
+a,
+ul {
+    padding:0;
+    margin:0;
+}
+
+.visually-hidden {
+    /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}

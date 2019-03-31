@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "create-react-app": "^2.1.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-particles": "0.0.3",
+    "react-particles-js": "^2.5.1",
+    "react-pose": "^4.0.8",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-scrollable-anchor": "^0.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
