@@ -6,6 +6,7 @@ import LowerWordAnimation from "./LowerWordAnimation";
 import ContinueButtonLink from "./ContinueButtonLink";
 import { TweenLite } from "gsap";
 
+
 class LoadingScreen extends Component {
     constructor() {
         super();
@@ -81,6 +82,7 @@ class LoadingScreen extends Component {
             className="particles"
             params={particlesConfig}	
             />
+    
                 <h1 className="myName"><span ref={ span => this.d = span }>D</span>ustin Bradley</h1>
              
             

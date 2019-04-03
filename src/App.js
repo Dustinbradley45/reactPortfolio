@@ -7,7 +7,7 @@ import MainPage from "./MainPage/MainPage.js";
 const particlesConfig = {
     "particles": {
         "number": {
-            "value": 14,
+            "value": 80,
             "density": {
                 "enable": true,
                 "value_area": 800

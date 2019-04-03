@@ -5,7 +5,7 @@ class Navigation extends Component {
     constructor() {
         super();
         this.state = {
-            animState: false
+            activeLink: false
         }
         
         this.linkLoad = null;
@@ -72,7 +72,7 @@ class Navigation extends Component {
         
         return (
             <nav>
-                <p>Menu</p>
+                {/* <p>Menu</p> */}
                 <ul className="mainNav">
                     <li className="navigationLinks" ref={li => this.navHome = li}><button
                         onClick={goToHomeLink}>Home</button></li>

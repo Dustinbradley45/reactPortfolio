@@ -5,7 +5,7 @@
     @include flex(column, center, center);
 
     & h1 {
-        @include font(5rem, 300);
+        @include font(5rem, 200);
         margin-top:20%;
         animation:fadeIn .5s linear;
 
@@ -21,6 +21,7 @@
     margin-top:22%;
     padding-left:2rem;
     animation:fadeOut .5s linear
+    // opacity:0;
 }
 
 .projectName h3 {
@@ -49,9 +50,16 @@
     color:black;
     border:none;
     background:transparent;
-    font-size:2rem;
     animation:fadeIn .5s linear;
+    @include font(2rem, 200);
 }
+
+// .toMainPage:hover,
+// .toMainPage:active,
+// .toMainPage:focus {
+//     font-weight:300;
+
+// }
 
 .toMainPage::after {
     content:"";
@@ -68,7 +76,8 @@
 .toMainPage:active:after {
     opacity: 1;
     width:100%;
-    transition: .1s all linear;
+    
+    transition: .2s all linear;
 
 }
 

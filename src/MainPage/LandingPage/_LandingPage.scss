@@ -1,16 +1,35 @@
 .landingPageWrapper {
-    margin-top:15rem;
+    margin-top:17rem;
     text-align:center;
+    width: 50%;
+    margin:15rem auto 0 auto;
     
     h1{
         @include font(4rem, 200);
+        opacity:0;
+        padding: 1rem;
         
     }
 
     h2 {
          @include font(3rem, 200);
+         opacity:0;
+         padding: 1rem;
     }
     h3 {
          @include font(2rem, 200);
+         opacity:0;
+         padding: 1rem;
+    }
+}
+
+.hand {
+   display:inline-block;
+    height: 50px;
+    width: 50px;
+
+    svg {
+        width: 100%;
+
     }
 }

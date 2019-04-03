@@ -7,6 +7,7 @@ import About from "./About/About";
 import Skills from "./Skills/Skills";
 import Portfolio from "./Portfolio/Portfolio";
 import Contact from "./Contact/Contact";
+import Socials from "./Socials/Socials";
 
 class MainPage extends Component {
     constructor() {
@@ -16,7 +17,7 @@ class MainPage extends Component {
             goToAbout: false,
             goToSkills: false,
             goToContact:false,
-            goToPortfolio:false,
+            goToPortfolio: false,
         }
     }
 
@@ -102,7 +103,11 @@ class MainPage extends Component {
                                     : goToPortfolio === true ?
                                         <Portfolio /> :
                                         null
-            }
+                }
+                <div className="socialsWrapper">
+                    <Socials/>
+
+                </div>
             
                 
             </div>

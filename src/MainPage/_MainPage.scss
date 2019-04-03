@@ -1,8 +1,22 @@
 main {
-    animation:fadeIn .7s linear;    
+    animation:fadeIn .7s linear; 
+    font-weight:300;
+  
 
 }
 
 main h1 {
     @include font(3rem 300);
+}
+
+i {
+    color:blue;
+}
+
+
+.socials ul {
+    position:absolute;
+    bottom:0;
+    right:0;
+    display:none;
 }

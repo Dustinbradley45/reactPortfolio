@@ -1,0 +1,33 @@
+.socialsWrapper {
+    position:fixed;
+    
+    bottom:0;
+    right:0;
+    
+    ul {
+        list-style:none;
+        display:flex;
+        flex-direction:row;
+    }
+
+    li {
+        padding: 1rem;
+        opacity:0;
+    }
+    i {
+        color:rgba(0,0,0,.6);
+        font-size: 2rem;
+        transition: .2s all linear;
+
+        &:hover,
+        &:active,
+        &:focus {
+               color:rgba(0, 0, 0, 1);
+        }   
+        
+    }
+
+    a {
+        text-decoration:none;
+    }
+}
