@@ -89,10 +89,10 @@ a {
 
 @keyframes navSlideIn {
     0% {
-        transform:translateX(-200px)rotate(-90deg);
+        transform:translateX(-200px)rotate(0deg);
     }
     0% {
-        transform:translateX(0)rotate(-45deg);
+        transform:translateX(0)rotate(0deg);
     }
 }
 

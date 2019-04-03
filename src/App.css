@@ -382,23 +382,23 @@ a {
 
 @-webkit-keyframes navSlideIn {
   0% {
-    -webkit-transform: translateX(-200px) rotate(-90deg);
-            transform: translateX(-200px) rotate(-90deg);
+    -webkit-transform: translateX(-200px) rotate(0deg);
+            transform: translateX(-200px) rotate(0deg);
   }
   0% {
-    -webkit-transform: translateX(0) rotate(-45deg);
-            transform: translateX(0) rotate(-45deg);
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
   }
 }
 
 @keyframes navSlideIn {
   0% {
-    -webkit-transform: translateX(-200px) rotate(-90deg);
-            transform: translateX(-200px) rotate(-90deg);
+    -webkit-transform: translateX(-200px) rotate(0deg);
+            transform: translateX(-200px) rotate(0deg);
   }
   0% {
-    -webkit-transform: translateX(0) rotate(-45deg);
-            transform: translateX(0) rotate(-45deg);
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
   }
 }
 
