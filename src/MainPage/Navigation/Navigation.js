@@ -23,6 +23,7 @@ class Navigation extends Component {
             y: -20,
             autoAlpha: 1,
             rotation: "-45",
+            delay:1
         },
             0.1);
         
@@ -31,7 +32,7 @@ class Navigation extends Component {
                 y: -20,
             autoAlpha: 1,
             rotation: "-45", 
-            delay: 0.4,
+            delay: 1.4,
             },
             0.1);
         
@@ -40,7 +41,7 @@ class Navigation extends Component {
                 y: -20,
                 autoAlpha: 1,
                 rotation: "-45",
-                delay: 0.8,
+                delay: 1.8,
             },
             0.1);
         
@@ -49,7 +50,7 @@ class Navigation extends Component {
                 y: -20,
                 autoAlpha: 1,
             rotation: "-45",
-                delay:1.2
+                delay:2.2
             },
             0.1);
         
@@ -58,7 +59,7 @@ class Navigation extends Component {
                 y: -20,
                 autoAlpha: 1,
                 rotation: "-45",
-                delay:1.6,
+                delay:2.6,
             },
             0.1);
         
@@ -68,7 +69,7 @@ class Navigation extends Component {
 
     render() {
       
-        const { goToAboutLink, goToHomeLink, goToSkillsLink, goToContactLink, goToPortfolioLink } = this.props;
+        const { goToAboutLink, goToHomeLink, goToSkillsLink, goToContactLink, goToPortfolioLink, activeLink} = this.props;
         
         return (
             <nav>

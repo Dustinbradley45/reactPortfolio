@@ -18,6 +18,7 @@ class MainPage extends Component {
             goToSkills: false,
             goToContact:false,
             goToPortfolio: false,
+            fontWeight :"600",
         }
     }
 
@@ -75,7 +76,7 @@ class MainPage extends Component {
 
     render() {
         const { particlesConfig } = this.props;
-        const { showLanding, goToAbout, goToSkills, goToContact, goToPortfolio } = this.state;
+        const { showLanding, goToAbout, goToSkills, goToContact, goToPortfolio,fontWeight } = this.state;
         const { goToAboutLink, goToHomeLink,goToSkillsLink, goToContactLink, goToPortfolioLink } = this;
 
         return (
@@ -85,6 +86,7 @@ class MainPage extends Component {
                 className="particles"
             />
                 <Navigation
+                    activeLink={fontWeight}
                     goToAboutLink={goToAboutLink}
                     goToHomeLink={goToHomeLink}
                     goToSkillsLink={goToSkillsLink}
