@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import planted  from "./../../Assets/Planted-Home.jpg";
 import dine from "./../../Assets/dine-I-might.png";
 import tele from "./../../Assets/Broken-Telephone-Desktop.png";
-import robots from "./../../Assets/robofriends.png";
-import ProjectOne from "./ProjectOne.js";
+import robots from "./../../Assets/robofriends.png"; 
+import dragRace from "./../../Assets/dragRace.png";
+// import ProjectOne from "./ProjectOne.js";
 import ProjectTwo from "./ProjectTwo";
 import ProjectThree from "./ProjectThree";
 import ProjectFour from "./ProjectFour.js";
 import ProjectFive from "./ProjectFive.js";
-// import ProjectSix from "./ProjectSix.js";
+import ProjectSix from "./ProjectSix.js";
 
 class Portfolio extends Component {
     constructor() {
@@ -22,6 +23,13 @@ class Portfolio extends Component {
             projectSixVisible:false
         }
     }
+
+    projectOneVisible = () => {
+        this.setState({
+            projectOneVisible: !this.state.projectOneVisible
+        })
+    }
+
     projectTwoVisible = () => {
         this.setState({
             projectTwoVisible:!this.state.projectTwoVisible
@@ -44,8 +52,14 @@ class Portfolio extends Component {
             projectFiveVisible: !this.state.projectFiveVisible
         })
     }
+
+    projectSixVisible = () => {
+        this.setState({
+            projectSixVisible: !this.state.projectSixVisible
+        })
+    }
     render() {
-        const { projectTwoVisible,projectThreeVisible, projectFourVisible, projectFiveVisible } = this;
+        const { projectOneVisible, projectTwoVisible,projectThreeVisible, projectFourVisible, projectFiveVisible, projectSixVisible } = this;
         return (
             <div className="portfolioWrapper">
                 <div className="projectOneWrapper">
@@ -53,7 +67,7 @@ class Portfolio extends Component {
                         <h2 className="projectOne">1. Face Detector App</h2>
                         <h3>React - CSS3 - RESTful API</h3>
                             <p className="projectOneDescription">Paste a URL into the detection box, using the Clarifai RESTful API it will recognize any faces within the image.</p>
-                            <button>Preview</button>
+                        <button onClick={projectOneVisible}>Preview</button>
                     </div>
                     <div className="projectImageContainerOne">
                         
@@ -139,11 +153,17 @@ class Portfolio extends Component {
                     <h2 className="projectSix">6. Drag Race Battle</h2>
                     <h3>React - RESTful API - Sass </h3>
                         <p className="projectSixDescription">Will you beat out the other queens?</p>
-                        <button>Preview</button>
+                        <button onClick={projectSixVisible}>Preview</button>
                     </div>
                     <div className="projectImageContainerSix">
+                        <img src={dragRace} alt=""/>
                     </div>
                 </div>
+                 {
+                     this.state.projectSixVisible === true ?
+                         <ProjectSix/> :
+                         null
+                 }
                 
 
             </div>
