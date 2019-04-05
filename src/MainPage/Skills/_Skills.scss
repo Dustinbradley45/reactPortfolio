@@ -10,8 +10,9 @@
 
 .iconWrapper {
     @include flex(row, center, center);
-    width:60%;
-    margin-top:10rem;
+    width:100%;
+    padding:10rem;
+    margin-top:31%;
     flex-wrap: wrap;
 
 }
@@ -25,6 +26,7 @@
     letter-spacing: 1.3px;
     
     img{
+        max-height:100%;
         width:100%;
         opacity:.6;
     }

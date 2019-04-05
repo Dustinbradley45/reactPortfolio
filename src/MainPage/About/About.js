@@ -31,9 +31,7 @@ class About extends Component {
         })
         
     }
-    // this.fadeOutIn = TweenLite.to(this.aboutComponent, 1, {
-    //     opacity:1
-    // })
+
     
     render() {
 

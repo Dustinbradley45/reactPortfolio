@@ -22,37 +22,37 @@
         
     }
 
-    &::before {
-        content:'@PamLau';
-         display:block;
-         position:absolute;
-         bottom:100px;
-         right:0;
-         left:0;
-         height:0;
-         width:100%;
-         margin:0 auto;
-         color:white;
-         @include font(1.5rem, 300);
-         opacity:1;
-        z-index:100;
-        transition: .8s all linear;
+    // &::before {
+    //     content:'@PamLau';
+    //      display:block;
+    //      position:absolute;
+    //      bottom:100px;
+    //      right:0;
+    //      left:0;
+    //      height:0;
+    //      width:100%;
+    //      margin:0 auto;
+    //      color:white;
+    //      @include font(1.5rem, 300);
+    //      opacity:1;
+    //     z-index:100;
+    //     transition: .8s all linear;
 
-    }
+    // }
 
-    &::after {
-        content:'';
-            background-color:rgba(0,0,0,.3);
-            display:block;
-            position:absolute;
-            bottom:59px;
-            right:0;
-            left:0;
-            height:40px;
-            width:30%;
-            transition:.5s all linear;
+    // &::after {
+    //     content:'';
+    //         background-color:rgba(0,0,0,.3);
+    //         display:block;
+    //         position:absolute;
+    //         bottom:59px;
+    //         right:0;
+    //         left:0;
+    //         height:40px;
+    //         width:30%;
+    //         transition:.5s all linear;
         
-    }
+    // }
 
 }
     .headshotContainer img:hover .headshotContainer:after {
@@ -76,6 +76,29 @@
 
     & p:first-of-type {
         margin-bottom: 1.3rem;
+    }
+}
+
+@media (max-width:900px) {
+    .aboutWrapper {
+        @include flex(column, center,center);
+        margin-top:3rem;
+    }
+
+    .headshotContainer {
+        height:300px;
+        width:300px;
+        margin-bottom:10%;
+    }
+
+    .aboutInfo {
+        padding-left:0;
+    }
+}
+
+@media (max-width: 500px) {
+    .headshotContainer {
+        width:80%;
     }
 }
 
