@@ -63,15 +63,18 @@ ul {
   -ms-flex-item-align: start;
       align-self: flex-start;
   justify-self: flex-end;
-  position: relative;
-  margin-top: 22%;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
   padding-left: 2rem;
-  -webkit-animation: fadeOut 0.5s linear;
-          animation: fadeOut 0.5s linear;
+  -webkit-animation: inOut 5s linear;
+          animation: inOut 5s linear;
+  color: black;
+  font-size: 1rem;
 }
 
 .projectName h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   -webkit-animation: slideUpTwo 1s linear;
           animation: slideUpTwo 1s linear;
@@ -103,11 +106,13 @@ ul {
   text-decoration: none;
   color: black;
   border: none;
+  margin-top: 1rem;
   background: transparent;
-  -webkit-animation: fadeIn .5s linear;
-          animation: fadeIn .5s linear;
+  -webkit-animation: fadeIn .7s linear;
+          animation: fadeIn .7s linear;
   font-size: 2rem;
   font-weight: 200;
+  padding-bottom: 5px;
 }
 
 .toMainPage::after {
@@ -126,66 +131,6 @@ ul {
   width: 100%;
   -webkit-transition: .2s all linear;
   transition: .2s all linear;
-}
-
-@-webkit-keyframes slideUpOne {
-  0% {
-    -webkit-transform: translateY(400px);
-            transform: translateY(400px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes slideUpOne {
-  0% {
-    -webkit-transform: translateY(400px);
-            transform: translateY(400px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes slideUpTwo {
-  0% {
-    -webkit-transform: translateY(200px);
-            transform: translateY(200px);
-  }
-  50% {
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
-  }
-  80% {
-    -webkit-animation-play-state: running;
-            animation-play-state: running;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes slideUpTwo {
-  0% {
-    -webkit-transform: translateY(200px);
-            transform: translateY(200px);
-  }
-  50% {
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
-  }
-  80% {
-    -webkit-animation-play-state: running;
-            animation-play-state: running;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
 }
 
 @-webkit-keyframes fadeIn {
@@ -221,6 +166,86 @@ ul {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes inOut {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes inOut {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .loadingScreenWrapper h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 30vh;
   }
 }
 
@@ -451,6 +476,78 @@ a {
   }
 }
 
+.mobileNavButton {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobileNavIcon {
+  height: 2px;
+  width: 2rem;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNavIcon::after, .mobileNavIcon::before {
+  content: '';
+  height: 2px;
+  width: 2rem;
+  background-color: black;
+  display: block;
+  -webkit-transition: .1s all linear;
+  transition: .1s all linear;
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+.mobileNavIcon::before {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNavIcon::after {
+  -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNavButton:hover .mobileNavIcon:after {
+  content: "Menu";
+  -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+  background-color: transparent;
+}
+
+.navListHolder {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
 .landingPageWrapper {
   margin-top: 17rem;
   text-align: center;
@@ -487,6 +584,49 @@ a {
 
 .hand svg {
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .landingPageWrapper {
+    width: 95%;
+  }
+}
+
+@media (max-width: 675px) {
+  .landingPageWrapper {
+    margin-top: 16rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .landingPageWrapper h1 {
+    font-size: 3rem;
+  }
+  .landingPageWrapper h2 {
+    font-size: 2.5rem;
+  }
+  .landingPageWrapper h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .landingPageWrapper h1 {
+    font-size: 2rem;
+    padding: .5rem;
+  }
+  .landingPageWrapper h2 {
+    font-size: 1.5rem;
+    padding: .5rem;
+  }
+  .landingPageWrapper h3 {
+    font-size: 1rem;
+    padding: .5rem;
+  }
+  .hand {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 .aboutWrapper {
@@ -810,7 +950,7 @@ form textarea:focus, form textarea:active {
 }
 
 .portfolioWrapper {
-  margin: 0 auto 0 auto;
+  margin: 10rem auto 0 auto;
 }
 
 .projectOneWrapper,
@@ -819,10 +959,10 @@ form textarea:focus, form textarea:active {
 .projectFourWrapper,
 .projectFiveWrapper,
 .projectSixWrapper {
+  outline: 2px solid blue;
   width: 70%;
-  padding: .5rem;
+  padding: 2rem .5rem;
   margin: 0 auto;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -845,7 +985,7 @@ form textarea:focus, form textarea:active {
 .projectFiveObjectWrapper,
 .projectSixObjectWrapper {
   width: 80%;
-  margin: 0 auto;
+  margin: 5rem auto;
   height: 80vh;
   margin-bottom: 10vh;
   display: -webkit-box;

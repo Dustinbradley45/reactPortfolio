@@ -26,7 +26,6 @@ nav {
         transform:rotate(-45deg);
         letter-spacing: 1.3px;
         animation: navSlideIn .3s linear;
-     
 
     }
 
@@ -106,5 +105,73 @@ nav {
     0% {
         transform:translateX(0)rotate(0deg);
     }
+}
+
+// MOBILE NAV
+
+.mobileNavButton {
+    height: 50px;
+    width: 50px;
+    position:fixed;
+    top:1rem;
+    right:1rem;
+    background-color:transparent;
+    border:none;
+    padding:0;
+    margin:0;
+    @include flex(column,center,center)
+}
+
+.mobileNavIcon {
+    height:2px;
+    width: 2rem;
+    background-color:black;
+    padding:0;
+    margin:0;
+
+    &::after,
+    &::before {
+    content:'';
+    height:2px;
+    width: 2rem;
+    background-color:black;
+    display:block;
+    // margin: .5rem 0 ;
+    transition:.1s all linear;
+         @include font(0.8rem, 200);
+    }
+
+    &::before {
+        transform:translateY(10px);
+        padding:0;
+        margin:0;
+    }
+
+    &::after {
+        transform:translateY(-12px);
+        padding:0;
+        margin:0;
+       
+    }
+}
+
+.mobileNavButton:hover .mobileNavIcon:after {
+    content:"Menu";
+    transform:translateY(-16px);
+    background-color:transparent;
+   
+
+}
+
+    
+    .mobileNavButton:hover .mobileNavIcon:before {
+    // transform:translateY(-10px);
+    // opacity:0;
+}
+
+.navListHolder {
+    position:absolute;
+    top:50px;
+    left:0;
 }
 
