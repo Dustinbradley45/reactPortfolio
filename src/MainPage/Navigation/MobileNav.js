@@ -5,7 +5,8 @@ class MobileNav extends Component {
     constructor() {
         super();
         this.state = {
-            navVisible:false
+            navVisible: false,
+            // backgroundColor:"black"
         }
     }
 
@@ -27,14 +28,30 @@ class MobileNav extends Component {
          } = this.props;
 
         return (
-            <div className="mobileNavWrapper">
-                <div className="mobileNavBorder">
-                    <button className="mobileNavButton" onClick={toggleNav} aria-label="menu" >
-                        <div className="mobileNavIcon"></div>
-                    </button>
-                </div>
+        <React.Fragment>
+            {
+                this.state.navVisible === true ?
+                    <div className="mobileNavWrapperWhite">
+                        <div className="mobileNavBorderWhite">
+                            <button className="mobileNavButtonWhite" onClick={toggleNav} aria-label="menu" >
+                                <div className="mobileNavIconWhite"></div>
+                            </button>
+                            </div>
+                        </div>
+                        :
+                                    
+                    <div className="mobileNavWrapperBlack">
+                        <div className="mobileNavBorderBlack">
+                            <button className="mobileNavButtonBlack" onClick={toggleNav} aria-label="menu" >
+                                <div className="mobileNavIconBlack"></div>
+                            </button>
+                        </div>
+                    </div>
+                   
+        }
                 {
                     this.state.navVisible === true ? 
+                     
                         <MobileNavList
                             toggleNav={toggleNav}
                             goToAboutLink={goToAboutLink}
@@ -45,7 +62,7 @@ class MobileNav extends Component {
                         null
                         
                 }
-            </div>
+          </React.Fragment>
         )
     }
 }

@@ -35,10 +35,9 @@ class Socials extends Component {
         return (
       
             <ul>
-                <li className="social" ref={li => this.github= li}><i className="fab fa-github"><a href="#"></a></i></li>
-                <li className="social" ref={li => this.twitter= li}><i className="fab fa-twitter"><a href="#"></a></i></li>
-                <li className="social" ref={li => this.linkedIn= li}><i className="fab fa-linkedin-in"><a href="#"></a></i></li>
-                {/* <li className="socials"></li> */}
+                <li className="social" ref={li => this.github= li}><a href="https://github.com/Dustinbradley45" target="_blank"><i className="fab fa-github"></i></a></li>
+                <li className="social" ref={li => this.twitter= li}><a href="https://twitter.com/dustinbradley45" target="_blank"><i className="fab fa-twitter"></i></a></li>
+                <li className="social" ref={li => this.linkedIn= li}><a href="https://linkedin.com/in/dustin-bradley" target="_blank"><i className="fab fa-linkedin-in"></i></a></li>
             </ul>
 
         )

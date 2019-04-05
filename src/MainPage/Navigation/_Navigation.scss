@@ -66,6 +66,18 @@ nav {
 
 }
 
+.mobileNavList {
+    text-align:center;
+    list-style:none;
+
+    button {
+        border:0;
+        background-color:transparent;
+        @include font(1.5rem, 200);
+
+    }
+}
+
 
 
 .navigationLinks {
@@ -108,9 +120,9 @@ nav {
     }
 }
 
-// MOBILE NAV
+// MOBILE NAV BLACK
 
-.mobileNavButton {
+.mobileNavButtonBlack {
     height: 50px;
     width: 50px;
     position:fixed;
@@ -120,10 +132,11 @@ nav {
     border:none;
     padding:0;
     margin:0;
-    @include flex(column,center,center)
+    @include flex(column,center,center);
+    z-index:400;
 }
 
-.mobileNavIcon {
+.mobileNavIconBlack {
     height:2px;
     width: 2rem;
     background-color:black;
@@ -156,23 +169,118 @@ nav {
     }
 }
 
-.mobileNavButton:hover .mobileNavIcon:after {
+.mobileNavButtonBlack:hover .mobileNavIconBlack:after {
     content:"Menu";
-    transform:translateY(-16px);
+    transform:translateY(-20px);
     background-color:transparent;
    
 
 }
 
-    
-    .mobileNavButton:hover .mobileNavIcon:before {
-    // transform:translateY(-10px);
-    // opacity:0;
+
+
+// WHITE
+.mobileNavButtonWhite {
+    height: 50px;
+    width: 50px;
+    position:fixed;
+    top:1rem;
+    right:1rem;
+    background-color:transparent;
+    border:none;
+    padding:0;
+    margin:0;
+    @include flex(column,center,center);
+    z-index:400;
 }
 
-.navListHolder {
-    position:absolute;
-    top:50px;
-    left:0;
+.mobileNavIconWhite{
+    height:2px;
+    width: 2rem;
+    background-color:white;
+    padding:0;
+    margin:0;
+
+    &::after,
+    &::before {
+    content:'';
+    height:2px;
+    width: 2rem;
+    background-color:White;
+    display:block;
+    // margin: .5rem 0 ;
+    transition:.1s all linear;
+         @include font(0.8rem, 200);
+    }
+
+    &::before {
+        transform:translateY(10px);
+        padding:0;
+        margin:0;
+    }
+
+    &::after {
+        transform:translateY(-12px);
+        padding:0;
+        margin:0;
+        color:white;
+       
+    }
 }
+
+.mobileNavButtonWhite:hover .mobileNavIconWhite:after {
+    content:"Exit";
+    transform:translateY(-20px);
+    background-color:transparent;
+   
+
+}
+
+
+.navListHolder {
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:0 auto;
+    @include flex(column, center, center);
+    background-color:rgba(0,0,0,1);
+    z-index:300;
+    
+}
+
+.mobileNavList {
+
+    button {
+        color:rgba(255,255,255,.7);
+        padding:2rem;
+
+    }
+}
+// .mobileNavList button::before
+.mobileNavList button::after,
+{
+    content:"";
+    width: 100%;
+    height: 1px;
+    display:block;
+    background-color:rgba(255,255,255,.7);
+    margin-top:5px;
+  
+} 
+
+.mobileNavList button:hover,
+.mobileNavList button:focus,
+.mobileNavList button:active {
+    color:rgba(255,255,255,1);
+}
+
+// .mobileNavList button:hover::after {
+//     width:100%;
+//     color:rgba(255,255,255,1)
+// }
+
+
+
 

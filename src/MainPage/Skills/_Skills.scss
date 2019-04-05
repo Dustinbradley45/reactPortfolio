@@ -1,8 +1,8 @@
 .skillsWrapper {
     // margin: 10rem 0 0 4rem;
-    width:80%;
+    width:90%;
     margin:0 auto;
-    margin-top:18rem;
+    margin-top:16rem;
     @include flex(column, center, center);
     
     
@@ -73,5 +73,28 @@
     &:focus,
     &:active {
          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
+    }
+}
+
+@media (max-width:1000px) {
+    .skillsWrapper {
+        margin-top:14rem;
+    }
+}
+
+@media(max-width:650px) {
+    .skillsWrapper {
+        width: 95%;
+    }
+}
+
+@media(max-width:550px) {
+    .skillsWrapper {
+        margin-top:9rem;
+
+        h3 {
+            font-size:1.5rem;
+            padding-bottom: 1rem;
+        }
     }
 }
