@@ -653,15 +653,6 @@ a {
   padding: 2rem;
 }
 
-.mobileNavList button::after {
-  content: "";
-  width: 100%;
-  height: 1px;
-  display: block;
-  background-color: rgba(255, 255, 255, 0.7);
-  margin-top: 5px;
-}
-
 .mobileNavList button:hover,
 .mobileNavList button:focus,
 .mobileNavList button:active {
@@ -837,10 +828,16 @@ a {
   .headshotContainer {
     height: 300px;
     width: 300px;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
   }
   .aboutInfo {
     padding-left: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .aboutWrapper {
+    margin-bottom: 5rem;
   }
 }
 
@@ -1017,6 +1014,30 @@ form input {
   padding-left: 5px;
 }
 
+form input::-webkit-input-placeholder {
+  font-size: 1rem;
+  font-weight: 200;
+  color: black;
+}
+
+form input:-ms-input-placeholder {
+  font-size: 1rem;
+  font-weight: 200;
+  color: black;
+}
+
+form input::-ms-input-placeholder {
+  font-size: 1rem;
+  font-weight: 200;
+  color: black;
+}
+
+form input::placeholder {
+  font-size: 1rem;
+  font-weight: 200;
+  color: black;
+}
+
 form input:focus, form input:active {
   -webkit-box-shadow: 0px 0px 5px 0px black;
           box-shadow: 0px 0px 5px 0px black;
@@ -1065,6 +1086,7 @@ form button {
           box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
   margin-top: 1rem;
   width: 80%;
+  color: black;
 }
 
 form button:hover, form button:focus, form button:active {
@@ -1093,8 +1115,57 @@ form textarea:focus, form textarea:active {
           box-shadow: 0px 0px 5px 0px black;
 }
 
+form textarea::-webkit-input-placeholder {
+  color: black;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+form textarea:-ms-input-placeholder {
+  color: black;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+form textarea::-ms-input-placeholder {
+  color: black;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+form textarea::placeholder {
+  color: black;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+@media (max-width: 1050px) {
+  form {
+    margin-top: 13rem;
+    width: 55%;
+  }
+}
+
+@media (max-width: 650px) {
+  form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 450px) {
+  form {
+    width: 95%;
+  }
+  form .nameBox {
+    width: 74%;
+  }
+  form .nameBox input[id="lastName"] {
+    margin-left: 0;
+  }
+}
+
 .portfolioWrapper {
-  margin: 5rem auto 5rem auto;
+  margin: 5rem auto;
 }
 
 .projectOneWrapper,
@@ -1105,7 +1176,7 @@ form textarea:focus, form textarea:active {
 .projectSixWrapper {
   width: 70%;
   padding: 2rem .5rem;
-  margin: 0 auto;
+  margin: 5vh auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1130,7 +1201,7 @@ form textarea:focus, form textarea:active {
   width: 80%;
   margin: 5rem auto;
   height: 80vh;
-  margin-bottom: 10vh;
+  margin-bottom: 7vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1144,6 +1215,7 @@ form textarea:focus, form textarea:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .projectOneObjectWrapper embed,
@@ -1166,6 +1238,39 @@ form textarea:focus, form textarea:active {
 .projectFiveInfo,
 .projectSixInfo {
   width: 50%;
+  margin-left: 1rem;
+}
+
+.projectOneInfo h2,
+.projectTwoInfo h2,
+.projectThreeInfo h2,
+.projectFourInfo h2,
+.projectFiveInfo h2,
+.projectSixInfo h2 {
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: 2.5px;
+}
+
+.projectOneInfo p,
+.projectTwoInfo p,
+.projectThreeInfo p,
+.projectFourInfo p,
+.projectFiveInfo p,
+.projectSixInfo p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1.6px;
+  line-height: 1.5rem;
+}
+
+.projectOneInfo button,
+.projectTwoInfo button,
+.projectThreeInfo button,
+.projectFourInfo button,
+.projectFiveInfo button,
+.projectSixInfo button {
+  margin-left: 5px;
 }
 
 .projectOneInfo > *:not(button),
@@ -1200,7 +1305,29 @@ form textarea:focus, form textarea:active {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 100%;
+  min-height: 100%;
+}
+
+.projectLinks {
+  position: absolute;
+  bottom: 0;
+}
+
+.langUsed {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 9px;
+  margin: 3px;
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  font-weight: 200;
+  display: inline-block;
+}
+
+.langUsed:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
 }
 
 .projectTwoWrapper,
@@ -1240,7 +1367,19 @@ form textarea:focus, form textarea:active {
 .desktopButton,
 .mobileButton,
 .tabletButton {
-  margin: 0 1rem;
+  margin: 0 .5rem;
+}
+
+.githubButton {
+  margin: 0 6px;
+  -webkit-transition: .1s all linear;
+  transition: .1s all linear;
+}
+
+.liveButton {
+  margin-left: 5px;
+  -webkit-transition: .1s all linear;
+  transition: .1s all linear;
 }
 
 .previewButton,
@@ -1248,6 +1387,7 @@ form textarea:focus, form textarea:active {
 .mobileButton,
 .tabletButton,
 .closeButton {
+  letter-spacing: 1.5px;
   border: none;
   background-color: transparent;
   font-size: 1rem;
@@ -1273,5 +1413,67 @@ form textarea:focus, form textarea:active {
 .closeButton:active {
   -webkit-box-shadow: 0px 0px 5px 0px black;
           box-shadow: 0px 0px 5px 0px black;
+}
+
+@media (max-width: 900px) {
+  .portfolioWrapper {
+    margin: 5rem auto 0 auto;
+  }
+  .projectOneWrapper,
+  .projectTwoWrapper,
+  .projectThreeWrapper,
+  .projectFourWrapper,
+  .projectFiveWrapper,
+  .projectSixWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .projectOneInfo,
+  .projectTwoInfo,
+  .projectThreeInfo,
+  .projectFourInfo,
+  .projectFiveInfo,
+  .projectSixInfo {
+    width: 80%;
+  }
+  .projectImageContainerOne,
+  .projectImageContainerTwo,
+  .projectImageContainerThree,
+  .projectImageContainerFour,
+  .projectImageContainerFive,
+  .projectImageContainerSix {
+    width: 75%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .projectOneInfo,
+  .projectTwoInfo,
+  .projectThreeInfo,
+  .projectFourInfo,
+  .projectFiveInfo,
+  .projectSixInfo {
+    width: 95%;
+  }
+  .projectImageContainerOne,
+  .projectImageContainerTwo,
+  .projectImageContainerThree,
+  .projectImageContainerFour,
+  .projectImageContainerFive,
+  .projectImageContainerSix {
+    width: 95%;
+  }
 }
 /*# sourceMappingURL=App.css.map */

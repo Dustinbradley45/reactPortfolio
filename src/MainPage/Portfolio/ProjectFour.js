@@ -40,6 +40,8 @@ class ProjectFour extends Component {
                
                 <embed src="http://dustinbradley.ca/RoboFriends/" type="text/html" style={{ width } }></embed>
                 <div className="buttonContainer">
+                     <a href="https://github.com/Dustinbradley45/robo_pals_redux" className="previewButton githubButton" target="_blank">Github</a>
+                    <a href="http://dustinbradley.ca/RoboFriends/" className="previewButton liveButton" target="_blank">Live</a>
                     <button className="mobileButton" onClick={mobile}>Mobile</button>
                     <button className="tabletButton" onClick={tablet}>Tablet</button>
                     <button className="desktopButton" onClick={desktop}>Desktop</button>

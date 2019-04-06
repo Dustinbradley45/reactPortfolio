@@ -38,7 +38,9 @@ class ProjectTwo extends Component {
             <div className="projectTwoObjectWrapper">
                 <embed src="https://dustinbradley45.github.io/dustinBradleyProject2/" type="text/html" style={ {width} }></embed>
             </div>
-             <div className="buttonContainer">
+                <div className="buttonContainer">
+                    <a href="https://github.com/Dustinbradley45/dustinBradleyProject2" className="previewButton githubButton" target="_blank">Github</a>
+                    <a href="https://dustinbradley45.github.io/dustinBradleyProject2/" className="previewButton liveButton" target="_blank">Live</a>
                     <button className="mobileButton" onClick={mobile}>Mobile</button>
                     <button className="tabletButton" onClick={tablet}>Tablet</button>
                     <button className="desktopButton" onClick={desktop}>Desktop</button>

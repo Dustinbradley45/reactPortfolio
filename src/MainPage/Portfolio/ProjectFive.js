@@ -32,9 +32,11 @@ class ProjectFive extends Component {
         const { width } = this.state;
         const { projectFiveClose } = this.props;
         return (
-               <div className="projectFiveObjectWrapper">
+            <div className="projectFiveObjectWrapper">
                 <embed src="https://restdecider2.firebaseapp.com/" type="text/html" style={ {width} }></embed>
-                  <div className="buttonContainer">
+                <div className="buttonContainer">
+                    <a href="https://github.com/Dustinbradley45/dineWithMe" className="previewButton githubButton" target="_blank">Github</a>
+                    <a href="https://restdecider2.firebaseapp.com/" className="previewButton liveButton" target="_blank">Live</a>
                     <button className="mobileButton" onClick={mobile}>Mobile</button>
                     <button className="tabletButton" onClick={tablet}>Tablet</button>
                     <button className="desktopButton" onClick={desktop}>Desktop</button>

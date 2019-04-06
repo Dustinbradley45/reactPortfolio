@@ -88,11 +88,17 @@
     .headshotContainer {
         height:300px;
         width:300px;
-        margin-bottom:10%;
+        margin-bottom:15%;
     }
 
     .aboutInfo {
         padding-left:0;
+    }
+}
+
+@media(max-width: 650px) {
+    .aboutWrapper {
+        margin-bottom:5rem;
     }
 }
 

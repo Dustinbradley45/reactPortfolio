@@ -96,7 +96,7 @@ class MainPage extends Component {
 
     render() {
         const { particlesConfig } = this.props;
-        const { showLanding, goToAbout, goToSkills, goToContact, goToPortfolio,fontWeight } = this.state;
+        const { showLanding, goToAbout, goToSkills, goToContact, goToPortfolio,fontWeight, width } = this.state;
         const { goToAboutLink, goToHomeLink,goToSkillsLink, goToContactLink, goToPortfolioLink, updateDimensions } = this;
 
         return (
@@ -139,7 +139,9 @@ class MainPage extends Component {
                                 goToContact === true ?
                                     <Contact /> 
                                     : goToPortfolio === true ?
-                                        <Portfolio /> :
+                                        <Portfolio 
+                                            width={width}
+                                        /> :
                                         null
             }
                 <div className="socialsWrapper">
