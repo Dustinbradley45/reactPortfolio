@@ -138,8 +138,19 @@ class Portfolio extends Component {
                     </div>
                     <div className="projectImageContainerOne">
                         <img src={brainApp} alt=""/>
-                    </div>
+                        </div>
                 </div>
+                         <div className="projectOneObjectContainer">
+                        {
+                            this.state.projectOneVisible ===true ? 
+                            <ProjectOne
+                                projectOneClose = {
+                                    projectOneClose
+                                }
+                                /> :
+                                null
+                            }
+                            </div>
 
                 <div className="projectTwoWrapper">
                     <div className="projectTwoInfo">

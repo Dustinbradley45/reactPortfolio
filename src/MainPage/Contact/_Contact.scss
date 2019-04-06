@@ -136,3 +136,10 @@ form {
         }
     }
 }
+
+@media (max-height:700px) {
+    form {
+        height:65vh;
+        margin-top:8rem;
+    }
+}

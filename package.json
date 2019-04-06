@@ -2,6 +2,7 @@
   "name": "brick-layout",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.dustinbradley.ca/newPage",
   "dependencies": {
     "create-react-app": "^2.1.8",
     "gsap": "^2.1.2",
