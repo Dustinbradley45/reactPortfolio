@@ -1,36 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import MobileNavList from "./MobileNavList";
 
-class MobileNav extends Component {
-    constructor() {
-        super();
-        this.state = {
-            navVisible: false,
-            // backgroundColor:"black"
-        }
-    }
-
-    toggleNav = () => {
-        this.setState({
-            navVisible:!this.state.navVisible
-        })
-    }
-
-    render() {
-        const { toggleNav } = this;
-         const {
-             goToAboutLink,
-             goToHomeLink,
-             goToSkillsLink,
-             goToContactLink,
-             goToPortfolioLink,
-             activeLink
-         } = this.props;
+const MobileNav = (props) => {
+    
+    const {
+        goToAboutLink,
+        goToHomeLink,
+        goToSkillsLink,
+        goToContactLink,
+        goToPortfolioLink,
+        activeLink,
+        navVisible,
+        toggleNav
+    } = props;
 
         return (
         <React.Fragment>
             {
-                this.state.navVisible === true ?
+                navVisible === true ?
                     <div className="mobileNavWrapperWhite">
                         <div className="mobileNavBorderWhite">
                             <button className="mobileNavButtonWhite" onClick={toggleNav} aria-label="menu" >
@@ -50,7 +37,7 @@ class MobileNav extends Component {
                    
         }
                 {
-                    this.state.navVisible === true ? 
+                    navVisible === true ? 
                      
                         <MobileNavList
                             toggleNav={toggleNav}
@@ -65,5 +52,5 @@ class MobileNav extends Component {
           </React.Fragment>
         )
     }
-}
+
 export default MobileNav;

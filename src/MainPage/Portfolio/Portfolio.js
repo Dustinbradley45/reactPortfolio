@@ -132,7 +132,7 @@ class Portfolio extends Component {
                                     <button className="previewButton" onClick={projectOneVisible}>Preview</button> :
                                     <React.Fragment>
                                         <a href="https://github.com/Dustinbradley45/face-detection" className="previewButton githubButton" target="_blank">Github</a>
-                                        <a href="http://dustinbradley.ca/DragRace/" className="previewButton liveButton" target="_blank">Live</a>
+                                        <a href="#" className="previewButton liveButton" target="_blank">Live</a>
                                     </React.Fragment>
                             }       
                     </div>

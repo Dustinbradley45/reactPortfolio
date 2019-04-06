@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import Header from "./Header/Header.js";
 import Navigation from "./Navigation/Navigation";
 import LandingPage from "./LandingPage/LandingPage";
 import About from "./About/About";
@@ -22,7 +21,8 @@ class MainPage extends Component {
             goToPortfolio: false,
             fontWeight: "600",
             height: window.innerHeight,
-            width: window.innerWidth
+            width: window.innerWidth,
+            navVisible: false,
         }
          this.updateDimensions = this.updateDimensions.bind(this);
     }
@@ -34,6 +34,7 @@ class MainPage extends Component {
             goToSkills: false,
             goToContact: false,
             goToPortfolio: false,
+            navVisible:!this.state.navVisible
         })
     }
 
@@ -44,6 +45,7 @@ class MainPage extends Component {
             goToSkills: false,
             gotToContact: false,
             goToPortfolio: false,
+            navVisible: !this.state.navVisible
         })
     }
     goToSkillsLink = () => {
@@ -53,6 +55,7 @@ class MainPage extends Component {
             goToSkills: true,
             goToContact: false,
             goToPortfolio: false,
+            navVisible:!this.state.navVisible
         })
     }
 
@@ -63,6 +66,7 @@ class MainPage extends Component {
             goToSkills: false,
             goToContact: true,
             goToPortfolio: false,
+            navVisible:!this.state.navVisible
         })
     }
 
@@ -73,6 +77,7 @@ class MainPage extends Component {
              goToSkills: false,
              goToContact: false,
              goToPortfolio: true,
+             navVisible:!this.state.navVisible
          })
     }
 
@@ -90,14 +95,16 @@ class MainPage extends Component {
         });
     }
 
-
-
-
+     toggleNav = () => {
+         this.setState({
+             navVisible: !this.state.navVisible
+         })
+     }
 
     render() {
         const { particlesConfig } = this.props;
-        const { showLanding, goToAbout, goToSkills, goToContact, goToPortfolio,fontWeight, width } = this.state;
-        const { goToAboutLink, goToHomeLink,goToSkillsLink, goToContactLink, goToPortfolioLink, updateDimensions } = this;
+        const { showLanding, goToAbout, goToSkills, goToContact, goToPortfolio,fontWeight, width, navVisible } = this.state;
+        const { goToAboutLink, goToHomeLink,goToSkillsLink, goToContactLink, goToPortfolioLink, updateDimensions, toggleNav } = this;
 
         return (
             <div className="mainWrapper">
@@ -118,14 +125,17 @@ class MainPage extends Component {
                     goToSkillsLink={goToSkillsLink}
                     goToContactLink={goToContactLink}
                     goToPortfolioLink={goToPortfolioLink}
+                    
                         /> :
                         
                 <MobileNav
-                    goToAboutLink={goToAboutLink}
-                    goToHomeLink={goToHomeLink}
-                    goToSkillsLink={goToSkillsLink}
-                    goToContactLink={goToContactLink}
-                    goToPortfolioLink={goToPortfolioLink}
+                            goToAboutLink={goToAboutLink}
+                            goToHomeLink={goToHomeLink}
+                            goToSkillsLink={goToSkillsLink}
+                            goToContactLink={goToContactLink}
+                            goToPortfolioLink={goToPortfolioLink}
+                            navVisible={navVisible}
+                            toggleNav={toggleNav}
                         />
                     
                 }
@@ -146,15 +156,8 @@ class MainPage extends Component {
             }
                 <div className="socialsWrapper">
                     <Socials/>
-
-                </div>
-
-            
-                
+                </div>    
             </div>
-        
-        
-        
         )
     }
     componentWillUnmount() {
