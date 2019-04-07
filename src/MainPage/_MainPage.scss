@@ -2,15 +2,10 @@ main {
     animation:fadeIn .7s linear; 
     font-weight:300;
   
-
 }
 
 main h1 {
-    @include font(3rem 300);
-}
-
-i {
-    color:blue;
+    @include font(3rem, 300);
 }
 
 
@@ -20,3 +15,4 @@ i {
     right:0;
     display:none;
 }
+

@@ -10,6 +10,7 @@ import Socials from "./Socials/Socials";
 import MobileNav from "./Navigation/MobileNav";
 import WindowResize from "./WindowResize/WindowResize";
 
+
 class MainPage extends Component {
     constructor() {
         super();
@@ -26,6 +27,8 @@ class MainPage extends Component {
         }
          this.updateDimensions = this.updateDimensions.bind(this);
     }
+
+ 
 
     goToAboutLink = () => {
         this.setState({
@@ -153,7 +156,7 @@ class MainPage extends Component {
                                             width={width}
                                         /> :
                                         null
-            }
+                }
                 <div className="socialsWrapper">
                     <Socials/>
                 </div>    

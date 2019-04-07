@@ -64,9 +64,11 @@ class Skills extends Component {
                     <h2 ref={h2 => this.header = h2}>Education</h2>
                   
                     <h3 ref={h3 => this.subHeading = h3}>HackerYou - Web Development Immersive</h3>
-                    <p ref={p => this.paragraph = p}>The Web Development Immersive program is a 9 weeks crash course in everything from the basics of html5 to the complexities of component based javaScript frameworks like React.js</p>
+                    <p ref={p => this.paragraph = p}>The Web Development Immersive program is a 9 weeks crash course in everything from the basics of HTML5 and CSS3 to the complexities of component based moden javaScript frameworks like React.js</p>
+
+               
                         
-                    {
+                    {/* {
                         skillBadgeVisible === false ? 
                                 <button onClick={toggleBadges} className="stackToggle">
                                     <a href="#badges">
@@ -78,14 +80,15 @@ class Skills extends Component {
                         }
                         
               
-                </div>
             
                     {
                         skillBadgeVisible === true ?
                             <SkillBadges /> :
                             null
-                        }
+                        } */}
               
+                </div> 
+                     <SkillBadges/>
            
             </div>
         )

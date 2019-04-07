@@ -249,6 +249,24 @@ ul {
   }
 }
 
+main {
+  -webkit-animation: fadeIn .7s linear;
+          animation: fadeIn .7s linear;
+  font-weight: 300;
+}
+
+main h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.socials ul {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+
 .headerMain {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -919,16 +937,16 @@ a {
 }
 
 .skillsWrapper {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
-  margin-top: 16rem;
+  margin-top: 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -951,20 +969,34 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  padding: 10rem;
-  margin-top: 31%;
+  width: 50%;
+  padding: 0;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-transform: translateY(4rem);
+          transform: translateY(4rem);
 }
 
 .iconContainer {
-  width: calc(20% - 2rem);
+  width: calc(15% - 2rem);
   height: 100px;
   padding: 1rem;
-  margin: 2rem;
+  margin: 1rem;
   text-align: center;
   letter-spacing: 1.3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .iconContainer img {
@@ -973,12 +1005,28 @@ a {
   opacity: .6;
 }
 
-.iconContainer img:hover {
-  opacity: 1;
+.iconContainer p {
+  margin-top: 0.5rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.iconContainer p::after {
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: block;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
+}
+
+.iconContainer:hover .iconContainer p::after {
+  -webkit-transform: translateY(0.5rem);
+          transform: translateY(0.5rem);
 }
 
 .educationInfo {
-  width: 70%;
+  width: 50%;
   letter-spacing: 1.4px;
   font-weight: 200;
 }
@@ -1019,9 +1067,34 @@ a {
           box-shadow: 0px 0px 5px 0px black;
 }
 
+@media (max-width: 1100px) {
+  .skillsWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .educationInfo {
+    width: 75%;
+  }
+  .iconWrapper,
+  .skillsWrapper {
+    width: 85%;
+  }
+}
+
 @media (max-width: 1000px) {
   .skillsWrapper {
-    margin-top: 14rem;
+    margin-top: 8rem;
   }
 }
 
@@ -1031,13 +1104,23 @@ a {
   }
 }
 
+@media (max-width: 700px) {
+  .skillsWrapper,
+  .iconWrapper {
+    width: 95%;
+  }
+}
+
 @media (max-width: 550px) {
   .skillsWrapper {
-    margin-top: 9rem;
+    margin-top: 6rem;
   }
   .skillsWrapper h3 {
     font-size: 1.5rem;
     padding-bottom: 1rem;
+  }
+  .iconContainer {
+    width: calc(35% - 2rem);
   }
 }
 
