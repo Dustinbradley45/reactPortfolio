@@ -75,7 +75,7 @@ ul {
 
 .projectName h3 {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 200;
   -webkit-animation: slideUpTwo 1s linear;
           animation: slideUpTwo 1s linear;
   margin: 0;
@@ -549,7 +549,8 @@ a {
   margin: 0;
 }
 
-.mobileNavButtonBlack:hover .mobileNavIconBlack:after {
+.mobileNavButtonBlack:hover .mobileNavIconBlack:after,
+.mobileNavButtonBlack:active .mobileNavIconBlack:after {
   content: "Menu";
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
@@ -617,7 +618,8 @@ a {
   color: white;
 }
 
-.mobileNavButtonWhite:hover .mobileNavIconWhite:after {
+.mobileNavButtonWhite:hover .mobileNavIconWhite:after,
+.mobileNavButtonWhite:active .mobileNavIconWhite:after {
   content: "Exit";
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
@@ -653,10 +655,37 @@ a {
   padding: 2rem;
 }
 
+.mobileNavList button::before
+.mobileNavList button::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 5px;
+}
+
 .mobileNavList button:hover,
-.mobileNavList button:focus,
-.mobileNavList button:active {
+.mobileNavList button:focus {
   color: white;
+}
+
+@media (max-height: 650px) {
+  .mobileNavList button:active {
+    color: white;
+  }
+  .mobileNavButtonWhite:active .mobileNavIconWhite:after {
+    content: "Exit";
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    background-color: transparent;
+  }
+  .mobileNavButtonBlack:active .mobileNavIconBlack:after {
+    content: "Menu";
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    background-color: transparent;
+  }
 }
 
 .landingPageWrapper {
@@ -667,34 +696,48 @@ a {
 }
 
 .landingPageWrapper h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 200;
   opacity: 0;
   padding: 1rem;
 }
 
 .landingPageWrapper h2 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 200;
   opacity: 0;
   padding: 1rem;
 }
 
 .landingPageWrapper h3 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 200;
   opacity: 0;
   padding: 1rem;
 }
 
-.hand {
+.hand,
+.raccoon {
   display: inline-block;
   height: 50px;
   width: 50px;
 }
 
-.hand svg {
+.hand svg,
+.raccoon svg {
   width: 100%;
+}
+
+.raccoon svg {
+  height: 40px;
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+@media (max-width: 1110px) {
+  .landingPageWrapper {
+    width: 70%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -705,7 +748,34 @@ a {
 
 @media (max-width: 675px) {
   .landingPageWrapper {
-    margin-top: 16rem;
+    margin-top: 15rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .landingPageWrapper {
+    width: 95%;
+  }
+  .landingPageWrapper h1 {
+    font-size: 4.5rem;
+  }
+  .landingPageWrapper h2 {
+    font-size: 3.5rem;
+  }
+  .landingPageWrapper h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .landingPageWrapper h1 {
+    font-size: 4rem;
+  }
+  .landingPageWrapper h2 {
+    font-size: 3rem;
+  }
+  .landingPageWrapper h3 {
+    font-size: 2.5rem;
   }
 }
 
@@ -714,7 +784,7 @@ a {
     font-size: 3rem;
   }
   .landingPageWrapper h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .landingPageWrapper h3 {
     font-size: 1.5rem;
@@ -723,18 +793,19 @@ a {
 
 @media (max-width: 390px) {
   .landingPageWrapper h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     padding: .5rem;
   }
   .landingPageWrapper h2 {
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     padding: .5rem;
   }
   .landingPageWrapper h3 {
-    font-size: 1rem;
+    font-size: 2rem;
     padding: .5rem;
   }
-  .hand {
+  .hand,
+  .raccoon {
     height: 25px;
     width: 25px;
   }
@@ -1015,26 +1086,18 @@ form input {
 }
 
 form input::-webkit-input-placeholder {
-  font-size: 1rem;
-  font-weight: 200;
   color: black;
 }
 
 form input:-ms-input-placeholder {
-  font-size: 1rem;
-  font-weight: 200;
   color: black;
 }
 
 form input::-ms-input-placeholder {
-  font-size: 1rem;
-  font-weight: 200;
   color: black;
 }
 
 form input::placeholder {
-  font-size: 1rem;
-  font-weight: 200;
   color: black;
 }
 
@@ -1150,6 +1213,11 @@ form textarea::placeholder {
   form {
     width: 80%;
   }
+  form .nameBox input[id="firstName"],
+  form .nameBox input[id="lastName"],
+  form .nameBox input [id="email"] {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1161,6 +1229,13 @@ form textarea::placeholder {
   }
   form .nameBox input[id="lastName"] {
     margin-left: 0;
+  }
+}
+
+@media (max-height: 700px) {
+  form {
+    height: 65vh;
+    margin-top: 5rem;
   }
 }
 
@@ -1459,6 +1534,17 @@ form textarea::placeholder {
 }
 
 @media (max-width: 550px) {
+  .portfolioWrapper {
+    margin-top: 3rem;
+  }
+  .projectOneWrapper,
+  .projectTwoWrapper,
+  .projectThreeWrapper,
+  .projectFourWrapper,
+  .projectFiveWrapper,
+  .projectSixWrapper {
+    width: 90%;
+  }
   .projectOneInfo,
   .projectTwoInfo,
   .projectThreeInfo,

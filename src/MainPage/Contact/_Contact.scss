@@ -27,7 +27,7 @@ form {
 
 
            &::placeholder {
-               @include font(1rem, 200);
+            //    @include font(1rem, 200);
                color: black;
 
            }
@@ -119,6 +119,16 @@ form {
 @media (max-width:650px) {
     form {
         width:80%;
+
+        .nameBox {
+
+            input[id="firstName"],
+            input[id="lastName"],
+            input [id="email"] {
+                font-size:1rem;
+            }
+        }
+
     }
 }
 
@@ -140,6 +150,6 @@ form {
 @media (max-height:700px) {
     form {
         height:65vh;
-        margin-top:8rem;
+        margin-top:5rem;
     }
 }

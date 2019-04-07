@@ -201,6 +201,17 @@
 }
 
 @media (max-width: 550px) {
+    .portfolioWrapper {
+        margin-top:3rem;
+    }
+    .projectOneWrapper,
+    .projectTwoWrapper,
+    .projectThreeWrapper,
+    .projectFourWrapper,
+    .projectFiveWrapper,
+    .projectSixWrapper {
+        width: 90%;
+    }
       .projectOneInfo,
       .projectTwoInfo,
       .projectThreeInfo,
