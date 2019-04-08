@@ -1,30 +1,30 @@
 nav {
-   @include flex(column, center, flex-start);
+    @include flex(column, center, flex-start);
 
-   p {
-       text-align:center;
-       margin-left:2rem;
-   }
+    p {
+        text-align: center;
+        margin-left: 2rem;
+    }
 }
 
 .mainNav {
 
     height: 100vh;
-    position:fixed;
+    position: fixed;
     // transform:translateY(-50px);
     @include flex(column, center, center);
-    list-style:none;
-    margin:0;
-    top:0;
-    bottom:0;
+    list-style: none;
+    margin: 0;
+    top: 0;
+    bottom: 0;
     padding: 10px;
     z-index: 200;
 
 
 
-    li{
-        list-style:none;
-        transform:rotate(-45deg);
+    li {
+        list-style: none;
+        transform: rotate(-45deg);
         letter-spacing: 1.3px;
         animation: navSlideIn .3s linear;
 
@@ -33,26 +33,26 @@ nav {
 }
 
 .mainNav button {
-    border:none;
-    background:transparent;
+    border: none;
+    background: transparent;
     @include font(1rem, 300);
     margin: 2rem 0;
 }
 
 .mainNav button:after {
-    content:"";
-    display:block;
-    background-color:rgba(0,0,0,0.6);
+    content: "";
+    display: block;
+    background-color: rgba(0, 0, 0, 0.6);
     width: 1rem;
     height: 2px;
-    opacity:0;
+    opacity: 0;
     transition: .2s all linear;
 
 }
 
 .mainNav button:hover:after {
     width: 100%;
-    opacity:1;
+    opacity: 1;
 }
 
 
@@ -62,17 +62,17 @@ nav {
     height: 100px;
     background-color: #FFF;
     border-radius: 100%;
-    border:2px solid #000;
+    border: 2px solid #000;
 
 }
 
 .mobileNavList {
-    text-align:center;
-    list-style:none;
+    text-align: center;
+    list-style: none;
 
     button {
-        border:0;
-        background-color:transparent;
+        border: 0;
+        background-color: transparent;
         @include font(1.5rem, 200);
 
     }
@@ -82,41 +82,44 @@ nav {
 
 .navigationLinks {
     //    position:absolute;
-       z-index:-1;
-       top:0;
-       right:0;
-       bottom:0;
-       left:0;
-       
-    }
-    
-    
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+
+
+
     button {
-        transition:.1s all linear;
+        transition: .1s all linear;
 
     }
-    
+
     a {
-        text-decoration:none;
-        color: #000;
-        padding:0;
-        margin:0;
-    
+    text-decoration: none;
+    color: #000;
+    padding: 0;
+    margin: 0;
 }
+
+}
+
 .navigationLinks button:hover,
 .navigationLinks button:focus,
 .navigationLinks button:active {
-    transform:scale(1.2);
+    transform: scale(1.2);
 }
 
 
 
 @keyframes navSlideIn {
     0% {
-        transform:translateX(-200px)rotate(0deg);
+        transform: translateX(-200px)rotate(0deg);
     }
+
     0% {
-        transform:translateX(0)rotate(0deg);
+        transform: translateX(0)rotate(0deg);
     }
 }
 
@@ -125,47 +128,47 @@ nav {
 .mobileNavButtonBlack {
     height: 50px;
     width: 50px;
-    position:fixed;
-    top:1rem;
-    right:1rem;
-    background-color:transparent;
-    border:none;
-    padding:0;
-    margin:0;
-    @include flex(column,center,center);
-    z-index:400;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    @include flex(column, center, center);
+    z-index: 400;
 }
 
 .mobileNavIconBlack {
-    height:2px;
+    height: 2px;
     width: 2rem;
-    background-color:black;
-    padding:0;
-    margin:0;
+    background-color: black;
+    padding: 0;
+    margin: 0;
 
     &::after,
     &::before {
-    content:'';
-    height:2px;
-    width: 2rem;
-    background-color:black;
-    display:block;
-    // margin: .5rem 0 ;
-    transition:.1s all linear;
-         @include font(0.8rem, 200);
+        content: '';
+        height: 2px;
+        width: 2rem;
+        background-color: black;
+        display: block;
+        // margin: .5rem 0 ;
+        transition: .1s all linear;
+        @include font(0.8rem, 200);
     }
 
     &::before {
-        transform:translateY(10px);
-        padding:0;
-        margin:0;
+        transform: translateY(10px);
+        padding: 0;
+        margin: 0;
     }
 
     &::after {
-        transform:translateY(-12px);
-        padding:0;
-        margin:0;
-       
+        transform: translateY(-12px);
+        padding: 0;
+        margin: 0;
+
     }
 }
 
@@ -173,58 +176,57 @@ nav {
 .mobileNavButtonWhite {
     height: 50px;
     width: 50px;
-    position:fixed;
-    top:1rem;
-    right:1rem;
-    background-color:transparent;
-    border:none;
-    padding:0;
-    margin:0;
-    @include flex(column,center,center);
-    z-index:400;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    @include flex(column, center, center);
+    z-index: 400;
 }
 
-.mobileNavIconWhite{
-    height:2px;
+.mobileNavIconWhite {
+    height: 2px;
     width: 2rem;
-    background-color:white;
-    padding:0;
-    margin:0;
+    background-color: white;
+    padding: 0;
+    margin: 0;
 
     &::after,
     &::before {
-    content:'';
-    height:2px;
-    width: 2rem;
-    background-color:White;
-    display:block;
-    transition:.1s all linear;
-         @include font(0.8rem, 200);
+        content: '';
+        height: 2px;
+        width: 2rem;
+        background-color: White;
+        display: block;
+        transition: .1s all linear;
+        @include font(0.8rem, 200);
     }
 
     &::before {
-        transform:translateY(10px);
-        padding:0;
-        margin:0;
+        transform: translateY(10px);
+        padding: 0;
+        margin: 0;
     }
 
     &::after {
-        transform:translateY(-12px);
-        padding:0;
-        margin:0;
-        color:white;
-       
+        transform: translateY(-12px);
+        padding: 0;
+        margin: 0;
+        color: white;
+
     }
 }
 
 .mobileNavButtonWhite:hover .mobileNavIconWhite:after,
 .mobileNavButtonWhite:active .mobileNavIconWhite:after,
-.mobileNavButtonWhite:focus .mobileNavIconWhite:after
- {
-    content:"Exit";
-    transform:translateY(-20px);
-    background-color:transparent;
-   
+.mobileNavButtonWhite:focus .mobileNavIconWhite:after {
+    content: "Exit";
+    transform: translateY(-20px);
+    background-color: transparent;
+
 
 }
 
@@ -234,75 +236,87 @@ nav {
     content: "Menu";
     transform: translateY(-20px);
     background-color: transparent;
-    height:auto;
-
 }
 
 
 .navListHolder {
-    position:fixed;
-    left:0;
-    top:0;
-    right:0;
-    bottom:0;
-    margin:0 auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
     @include flex(column, center, center);
-    background-color:rgba(0,0,0,1);
-    z-index:300;
-    
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 300;
+
 }
 
 .mobileNavList {
 
     button {
-        color:rgba(255,255,255,.7);
-        padding:2rem;
+        color: rgba(255, 255, 255, .7);
+        padding: 2rem;
 
     }
 }
-.mobileNavList button::before
-.mobileNavList button::after,
-{
-    content:"";
-    width: 100%;
-    height: 1px;
-    display:block;
-    background-color:rgba(255,255,255,.7);
-    margin-top:5px;
-  
-} 
 
-.mobileNavList button:hover,
-.mobileNavList button:focus,
-{
-    color:rgba(255,255,255,1);
+.mobileNavList button::before,
+.mobileNavList button::after {
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    background-color: rgba(255, 255, 255, .7);
+    margin-top: 5px;
+    transition:.1s all linear;
+
+}
+
+.mobileNavList button::before {
+        transform:rotate(180deg);
+}
+
+// .mobileNavList button:hover::before,
+// .mobileNavList button:focus::before {
+//     color: rgba(255, 255, 255, 1);
+//     width: 100%;
+
+// }
+
+.mobileNavList button:hover::after,
+.mobileNavList button:focus::after {
+    color: rgba(255, 255, 255, 1);
+    width:100%;
 }
 
 
 
 @media (max-height:650px) {
-    .mobileNavList button:active
-{
-    color:rgba(255,255,255,1);
-}
-// .mobileNavButtonWhite:active:after {
-//     content: "Exit";
-//     transform: translateY(-20px);
-//     background-color: transparent;
 
+    .mobileNavButtonWhiteactive .mobileNavIconWhite:after,
+    .mobileNavButtonWhite:hover .mobileNavIconWhite:after,
+    .mobileNavButtonWhite:focus .mobileNavIconWhite:after {
+        content:"";
+        background-color:white;
+        transform: rotate(45deg)translateX(-1px);
 
-// }
+    }
 
+     .mobileNavButtonWhiteactive .mobileNavIconWhite,
+     .mobileNavButtonWhite:hover .mobileNavIconWhite,
+     .mobileNavButtonWhite:focus .mobileNavIconWhite {
+         background-color:black;
 
+     }
 
-
-
-    // .mobileNavIconWhite:after,
-    // .mobileNavIconBlack:after {
-    //     // transform:translate(0);
-    //     content:'';
-    //     background-color:black;
-    // }
+    .mobileNavButtonWhite:active .mobileNavIconWhite:before,
+    .mobileNavButtonWhite:hover .mobileNavIconWhite:before,
+    .mobileNavButtonWhite:focus .mobileNavIconWhite:before {
+        content:"";
+        background-color:white;
+        transform: rotate(-45deg)translateX(-1px);
+    }
 
 }
 

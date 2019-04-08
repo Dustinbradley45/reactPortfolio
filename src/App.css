@@ -467,12 +467,12 @@ nav p {
   left: 0;
 }
 
-button {
+.navigationLinks button {
   -webkit-transition: .1s all linear;
   transition: .1s all linear;
 }
 
-a {
+.navigationLinks a {
   text-decoration: none;
   color: #000;
   padding: 0;
@@ -645,7 +645,6 @@ a {
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
   background-color: transparent;
-  height: auto;
 }
 
 .navListHolder {
@@ -677,24 +676,50 @@ a {
   padding: 2rem;
 }
 
-.mobileNavList button::before
+.mobileNavList button::before,
 .mobileNavList button::after {
   content: "";
-  width: 100%;
+  width: 0px;
   height: 1px;
   display: block;
   background-color: rgba(255, 255, 255, 0.7);
   margin-top: 5px;
+  -webkit-transition: .1s all linear;
+  transition: .1s all linear;
 }
 
-.mobileNavList button:hover,
-.mobileNavList button:focus {
+.mobileNavList button::before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.mobileNavList button:hover::after,
+.mobileNavList button:focus::after {
   color: white;
+  width: 100%;
 }
 
 @media (max-height: 650px) {
-  .mobileNavList button:active {
-    color: white;
+  .mobileNavButtonWhiteactive .mobileNavIconWhite:after,
+  .mobileNavButtonWhite:hover .mobileNavIconWhite:after,
+  .mobileNavButtonWhite:focus .mobileNavIconWhite:after {
+    content: "";
+    background-color: white;
+    -webkit-transform: rotate(45deg) translateX(-1px);
+            transform: rotate(45deg) translateX(-1px);
+  }
+  .mobileNavButtonWhiteactive .mobileNavIconWhite,
+  .mobileNavButtonWhite:hover .mobileNavIconWhite,
+  .mobileNavButtonWhite:focus .mobileNavIconWhite {
+    background-color: black;
+  }
+  .mobileNavButtonWhite:active .mobileNavIconWhite:before,
+  .mobileNavButtonWhite:hover .mobileNavIconWhite:before,
+  .mobileNavButtonWhite:focus .mobileNavIconWhite:before {
+    content: "";
+    background-color: white;
+    -webkit-transform: rotate(-45deg) translateX(-1px);
+            transform: rotate(-45deg) translateX(-1px);
   }
 }
 
@@ -1021,7 +1046,7 @@ a {
 
 .iconContainer p::after {
   content: '';
-  height: 2px;
+  height: 1px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   display: block;
@@ -1034,8 +1059,6 @@ a {
 .iconContainer:hover > p::after {
   -webkit-transform: translateY(-2rem);
           transform: translateY(-2rem);
-  -webkit-animation: fadeInOut .1s linear;
-          animation: fadeInOut .1s linear;
 }
 
 .educationInfo {
@@ -1135,41 +1158,8 @@ a {
   .iconContainer {
     width: calc(35% - 2rem);
   }
-}
-
-@-webkit-keyframes fadeInOut {
-  0% {
-    opacity: 0.6;
-  }
-  25% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: .3;
-  }
-  100% {
-    opacity: .5;
-  }
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0.6;
-  }
-  25% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: .3;
-  }
-  100% {
-    opacity: .5;
+  .iconContainer p {
+    display: none;
   }
 }
 
@@ -1587,12 +1577,16 @@ form textarea::placeholder {
   margin: 0 6px;
   -webkit-transition: .1s all linear;
   transition: .1s all linear;
+  text-decoration: none;
+  color: black;
 }
 
 .liveButton {
   margin-left: 5px;
   -webkit-transition: .1s all linear;
   transition: .1s all linear;
+  text-decoration: none;
+  color: black;
 }
 
 .previewButton,
