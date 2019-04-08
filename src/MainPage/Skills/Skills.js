@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SkillBadges from "./SkillBadges";
-import ScrollableAnchor from "react-scrollable-anchor";
 import { TweenLite } from "gsap";
 
 class Skills extends Component {
@@ -64,29 +63,7 @@ class Skills extends Component {
                     <h2 ref={h2 => this.header = h2}>Education</h2>
                   
                     <h3 ref={h3 => this.subHeading = h3}>HackerYou - Web Development Immersive</h3>
-                    <p ref={p => this.paragraph = p}>The Web Development Immersive program is a 9 weeks crash course in everything from the basics of HTML5 and CSS3 to the complexities of component based moden javaScript frameworks like React.js</p>
-
-               
-                        
-                    {/* {
-                        skillBadgeVisible === false ? 
-                                <button onClick={toggleBadges} className="stackToggle">
-                                    <a href="#badges">
-                                        See Stack
-                                        </a></button> :
-                                
-                                <button onClick={toggleBadges} className="stackToggle">
-                                    <a href="#education">Close Stack</a></button>
-                        }
-                        
-              
-            
-                    {
-                        skillBadgeVisible === true ?
-                            <SkillBadges /> :
-                            null
-                        } */}
-              
+                    <p ref={p => this.paragraph = p}>The Web Development Immersive program is a 9 week crash course covering everything from the basics of HTML5 and CSS3 to the complexities of component based modern javaScript frameworks like React. It also focuses on helping students hone in soft skills required for the web development field like paired-programming and code reviews.</p>
                 </div> 
                      <SkillBadges/>
            

@@ -23,6 +23,16 @@
     }
 }
 
+  .openBracket {
+        display:inline-block;
+        transform:rotate(-30deg)translateY(-10px);
+  }
+
+  .closeBracket {
+    display:inline-block;
+    transform:rotate(30deg)translateY(10px);
+  }
+
 .hand,
 .raccoon {
    display:inline-block;
@@ -37,6 +47,7 @@
 }
 
 .raccoon  {
+    transform:rotate(-20deg);
 
     svg {
         height: 40px;
@@ -136,6 +147,8 @@
 
         
     }
+
+  
 
     .hand,
     .raccoon {

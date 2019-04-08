@@ -34,7 +34,7 @@
         
     }
     p {
-        margin-top:0.5rem;
+        margin-top:1rem;
         color:rgba(0,0,0,0.6);
     
             &::after {
@@ -43,20 +43,17 @@
                 width:100%;
                 background-color:rgba(0,0,0,0.6);
                 display:block;
-                transform:translateY(-2rem);
+                 transform:translateY(.5rem);
+                 transition:.1s all linear;
+            }
+            
         }
-    
+        &:hover > p::after  {
+            transform:translateY(-2rem);
+            animation:fadeInOut .1s linear;
+
+
     }
-}
-
-
-.iconContainer:hover .iconContainer p::after {
-    transform:translateY(.5rem);    
-}
-
-.iconContainer:hover .iconContainer p::after{
-    // opacity: 1;
-    // background-color:blue;
 }
 
 .educationInfo {
@@ -148,5 +145,26 @@
 
     .iconContainer {
         width:calc(35% - 2rem)
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity:0.6;
+    }
+
+    25% {
+        opacity:0.3;
+    }
+
+    50% {
+        opacity:0
+    }
+
+    75% {
+        opacity:.3;
+    }
+    100% {
+        opacity:.5;
     }
 }

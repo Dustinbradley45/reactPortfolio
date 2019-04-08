@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Controller, Scene } from 'react-scrollmagic';
+import AOS from "aos";
 import planted  from "./../../Assets/Planted-Home.jpg";
 import dine from "./../../Assets/dine-I-might.png";
 import tele from "./../../Assets/Broken-Telephone-Desktop.png";
@@ -24,6 +24,13 @@ class Portfolio extends Component {
             projectFiveVisible: false,
             projectSixVisible:false
         }
+    }
+
+    componentDidMount() {
+       
+        AOS.init();
+        // AOS.refresh();
+
     }
 
     projectOneVisible = () => {
@@ -120,13 +127,13 @@ class Portfolio extends Component {
         } = this.props;
         return (
 
-            <Controller>
+          
             <div className="portfolioWrapper">
                 <div className="projectOneWrapper">
-                    <div className="projectOneInfo">
+                    <div className="projectOneInfo" data-aos='fade-up'>
                         <h2 className="projectOne"><span className="projectNum">1.</span> Face Detector App</h2>
                         <h3><span className="langUsed">React</span> <span className="langUsed">CSS3</span> <span className="langUsed">RESTful API</span> </h3>
-                            <p className="projectOneDescription">Paste a URL into the detection box, using the Clarifai RESTful API it will recognize any faces within the image.</p>
+                            <p className="projectOneDescription">Paste a URL into the detection box, using the Clarifai RESTful API it will recognize any faces within the image. Input an image URL to get started!</p>
                             {
                                 width >= 900 ?
                                     <button className="previewButton" onClick={projectOneVisible}>Preview</button> :
@@ -137,7 +144,7 @@ class Portfolio extends Component {
                             }       
                     </div>
                     <div className="projectImageContainerOne">
-                        <img src={brainApp} alt=""/>
+                        <img src={brainApp} alt="Face Detector Preview"/>
                         </div>
                 </div>
                          <div className="projectOneObjectContainer">
@@ -153,9 +160,9 @@ class Portfolio extends Component {
                             </div>
 
                 <div className="projectTwoWrapper">
-                    <div className="projectTwoInfo">
-                    <h2 className="projectTwo">2. Planted</h2>
-                    <h3><span className="langUsed">HTML5</span> <span className="langUsed">Sass</span> <span className="langUsed">jQuery</span></h3>
+                    <div className="projectTwoInfo" data-aos="fade-up">
+                        <h2 className="projectTwo">2. Planted</h2>
+                        <h3><span className="langUsed">HTML5</span> <span className="langUsed">Sass</span> <span className="langUsed">jQuery</span></h3>
                             <p className="projectTwoDescription">Perfect three page PSD Conversion</p>
                              {
                                 width >= 900 ?
@@ -166,10 +173,13 @@ class Portfolio extends Component {
                                     </React.Fragment>
                             }       
                       
-                    </div>
-                    <div className="projectImageContainerTwo">
-                        <img src={planted} alt=""/>
-                    </div>
+                        </div>
+                        {/* </div> */}
+                       
+                        <div className="projectImageContainerTwo">
+                            <img src={planted} alt="Planted Preview"/>
+                        </div>
+                 
                 </div>
                     <div className="projectTwoObjectContainer">
                         {
@@ -180,14 +190,13 @@ class Portfolio extends Component {
                                 }
                                 /> :
                                 null
-                        }
+                    }
                     </div>
-
                  <div className="projectThreeWrapper">
                     <div className="projectThreeInfo">
                     <h2 className="projectThree">3. Broken Telephone</h2>
                     <h3><span className="langUsed">HTML5</span> <span className="langUsed">CSS3</span> <span className="langUsed">RESTful API</span> <span className="langUsed">Paired Programming</span></h3>
-                        <p className="projectThreeDescription">Think you know quotes? Using the Google Translate API, guess who said these classic quotes after they have been translated a few times.</p>
+                            <p className="projectThreeDescription">Think you know famous quotes? Guess the author after they have been translated to the language of your choosing and back again!</p>
                         {
                                 width >= 900 ?
                                     <button className="previewButton" onClick={projectThreeVisible}>Preview</button> :
@@ -198,7 +207,7 @@ class Portfolio extends Component {
                             }       
                     </div>
                     <div className="projectImageContainerThree">
-                        <img src={tele} alt=""/>
+                        <img src={tele} alt="Broken Telephone Preview"/>
                     </div>
                 </div>
                  <div className="projectFourObjectContainer">
@@ -214,7 +223,7 @@ class Portfolio extends Component {
                     <div className="projectFourInfo">
                     <h2 className="projectFour">4. RoboFriends Phonebook</h2>
                     <h3><span className="langUsed">React</span>  <span className="langUsed">Redux</span> <span className="langUsed">RESTful API</span></h3>
-                        <p className="projectFourDescription">Using the RoboHash api and a simple placeholder api, search through your robofriends information! Created with React, refactored using Redux.</p>
+                        <p className="projectFourDescription">Using the RoboHash API and a simple placeholder API, search through your robofriends information! Originally created with React, refactored using Redux.</p>
                         {
                                 width >= 900 ?
                                     <button className="previewButton" onClick={projectFourVisible}>Preview</button> :
@@ -225,7 +234,7 @@ class Portfolio extends Component {
                             }       
                     </div>
                     <div className="projectImageContainerFour">
-                        <img src={robots} alt=""/>
+                        <img src={robots} alt="RoboFriends Preview"/>
                     </div>
                 </div>
                  <div className="projectFourObjectContainer">
@@ -241,8 +250,8 @@ class Portfolio extends Component {
                  <div className="projectFiveWrapper">
                     <div className="projectFiveInfo">
                     <h2 className="projectFive">5. Dine-I-Mite</h2>
-                    <h3><span className="langUsed">React</span>  <span className="langUsed">React Router</span> <span className="langUsed">RESTful API</span> <span className="langUsed">Firebase</span> <span className="langUsed">Paired Programming</span> <span className="langUsed">CSS3</span> </h3>
-                        <p className="projectFiveDescription">Simple restuarunt list maker for the indecisive eater.</p>
+                    <h3><span className="langUsed">React</span>  <span className="langUsed">React Router</span> <span className="langUsed">RESTful API</span> <span className="langUsed">Firebase</span> <span className="langUsed">Paired Programming</span> <span className="langUsed">CSS3</span> <span className="langUsed">Firebase</span> </h3>
+                            <p className="projectFiveDescription">Take the indecisitveness out of your next dinner date with Dine-I-Mite! Using the Yelp API, Dine-I-Mite helps the indecisive pick a Restaraunt.</p>
                         {
                                 width >= 900 ?
                                     <button className="previewButton" onClick={projectFiveVisible}>Preview</button> :
@@ -253,7 +262,7 @@ class Portfolio extends Component {
                             }       
                     </div>
                     <div className="projectImageContainerFive">
-                        <img src={dine} alt=""/>
+                        <img src={dine} alt="Dine-I-Mite Preview"/>
                     </div>
                 </div>
                   {
@@ -266,7 +275,7 @@ class Portfolio extends Component {
                     <div className="projectSixInfo">
                     <h2 className="projectSix">6. Drag Race Battle</h2>
                     <h3><span className="langUsed">React</span> <span className="langUsed">RESTful API</span> <span className="langUsed">Sass</span> </h3>
-                        <p className="projectSixDescription">Will you beat out the other queens?</p>
+                        <p className="projectSixDescription">Will you beat out the other queens? Test your luck in this simple battle platform game!</p>
                         {
                                 width >= 900 ?
                                     <button className="previewButton" onClick={projectSixVisible}>Preview</button> :
@@ -277,7 +286,7 @@ class Portfolio extends Component {
                             }       
                     </div>
                     <div className="projectImageContainerSix">
-                        <img src={dragRace} alt=""/>
+                        <img src={dragRace} alt="Drag Race Battle Preview"/>
                     </div>
                 </div>
                  {
@@ -288,7 +297,7 @@ class Portfolio extends Component {
                          null
                  }
                 </div>
-            </Controller>
+         
         )
     }
 }

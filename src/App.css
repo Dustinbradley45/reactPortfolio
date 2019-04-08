@@ -103,6 +103,9 @@ ul {
 }
 
 .toMainPage {
+  font-size: 1.5rem;
+  font-weight: 200;
+  font-weight: 200;
   text-decoration: none;
   color: black;
   border: none;
@@ -110,8 +113,6 @@ ul {
   background: transparent;
   -webkit-animation: fadeIn .7s linear;
           animation: fadeIn .7s linear;
-  font-size: 2rem;
-  font-weight: 200;
   padding-bottom: 5px;
 }
 
@@ -120,7 +121,7 @@ ul {
   width: 2rem;
   height: 2px;
   display: block;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
 }
 
@@ -425,7 +426,7 @@ nav p {
 .mainNav button:after {
   content: "";
   display: block;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   width: 1rem;
   height: 2px;
   opacity: 0;
@@ -567,14 +568,6 @@ a {
   margin: 0;
 }
 
-.mobileNavButtonBlack:hover .mobileNavIconBlack:after,
-.mobileNavButtonBlack:active .mobileNavIconBlack:after {
-  content: "Menu";
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
-  background-color: transparent;
-}
-
 .mobileNavButtonWhite {
   height: 50px;
   width: 50px;
@@ -637,11 +630,22 @@ a {
 }
 
 .mobileNavButtonWhite:hover .mobileNavIconWhite:after,
-.mobileNavButtonWhite:active .mobileNavIconWhite:after {
+.mobileNavButtonWhite:active .mobileNavIconWhite:after,
+.mobileNavButtonWhite:focus .mobileNavIconWhite:after {
   content: "Exit";
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
   background-color: transparent;
+}
+
+.mobileNavButtonBlack:active .mobileNavIconBlack:after,
+.mobileNavButtonBlack:hover .mobileNavIconBlack:after,
+.mobileNavButtonBlack:focus .mobileNavIconBlack:after {
+  content: "Menu";
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  background-color: transparent;
+  height: auto;
 }
 
 .navListHolder {
@@ -692,18 +696,6 @@ a {
   .mobileNavList button:active {
     color: white;
   }
-  .mobileNavButtonWhite:active .mobileNavIconWhite:after {
-    content: "Exit";
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-    background-color: transparent;
-  }
-  .mobileNavButtonBlack:active .mobileNavIconBlack:after {
-    content: "Menu";
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-    background-color: transparent;
-  }
 }
 
 .landingPageWrapper {
@@ -734,6 +726,18 @@ a {
   padding: 1rem;
 }
 
+.openBracket {
+  display: inline-block;
+  -webkit-transform: rotate(-30deg) translateY(-10px);
+          transform: rotate(-30deg) translateY(-10px);
+}
+
+.closeBracket {
+  display: inline-block;
+  -webkit-transform: rotate(30deg) translateY(10px);
+          transform: rotate(30deg) translateY(10px);
+}
+
 .hand,
 .raccoon {
   display: inline-block;
@@ -744,6 +748,11 @@ a {
 .hand svg,
 .raccoon svg {
   width: 100%;
+}
+
+.raccoon {
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
 }
 
 .raccoon svg {
@@ -1006,7 +1015,7 @@ a {
 }
 
 .iconContainer p {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -1016,13 +1025,17 @@ a {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   display: block;
-  -webkit-transform: translateY(-2rem);
-          transform: translateY(-2rem);
-}
-
-.iconContainer:hover .iconContainer p::after {
   -webkit-transform: translateY(0.5rem);
           transform: translateY(0.5rem);
+  -webkit-transition: .1s all linear;
+  transition: .1s all linear;
+}
+
+.iconContainer:hover > p::after {
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
+  -webkit-animation: fadeInOut .1s linear;
+          animation: fadeInOut .1s linear;
 }
 
 .educationInfo {
@@ -1124,6 +1137,42 @@ a {
   }
 }
 
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 0.6;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: .3;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.6;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: .3;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+
 form {
   padding-bottom: 1rem;
   opacity: 0;
@@ -1162,26 +1211,31 @@ form input {
   border: none;
   -webkit-transition: .2s all linear;
   transition: .2s all linear;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.6);
   background-color: transparent;
   padding-left: 5px;
 }
 
 form input::-webkit-input-placeholder {
   color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 form input:-ms-input-placeholder {
   color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 form input::-ms-input-placeholder {
   color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 form input::placeholder {
   color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 form input:focus, form input:active {
@@ -1254,6 +1308,7 @@ form textarea {
   border: none;
   background-color: transparent;
   padding: .5rem;
+  border: 1px solid rgba(0, 0, 0, 0.6);
 }
 
 form textarea:focus, form textarea:active {
@@ -1323,7 +1378,7 @@ form textarea::placeholder {
 }
 
 .portfolioWrapper {
-  margin: 5rem auto;
+  margin: 1rem auto;
 }
 
 .projectOneWrapper,
@@ -1643,6 +1698,32 @@ form textarea::placeholder {
   .projectImageContainerFive,
   .projectImageContainerSix {
     width: 95%;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 /*# sourceMappingURL=App.css.map */

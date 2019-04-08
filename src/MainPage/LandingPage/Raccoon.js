@@ -1,18 +1,33 @@
 import React, { Component } from "react";
-
+import { TweenLite } from "gsap";
 class Raccoon extends Component {
     constructor() {
         super();
         this.state = {
             raccoon:true,
         }
+
+        this.animateRaccoon = null;
+        this.raccoon = null;
+
 }
 
+     componentDidMount() {
+
+         this.animateRaccoon = TweenLite.to(this.raccoon, 1, {
+                 rotation: "0",
+             repeat: -1,
+             delay: 2,
+             fill:"#FF0000"
+             },
+             .1);
+
+     }
 
 render() {
 
     return (
-        <div className= "raccoon">
+        <div className= "raccoon" ref={div => this.raccoon = div}>
 
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="200.000000pt" height="200.000000pt" viewBox="0 0 200.000000 200.000000"
