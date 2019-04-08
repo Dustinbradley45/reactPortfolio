@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AOS from "aos";
+import {TweenLite } from "gsap";
 import planted  from "./../../Assets/Planted-Home.jpg";
 import dine from "./../../Assets/dine-I-might.png";
 import tele from "./../../Assets/Broken-Telephone-Desktop.png";
@@ -24,12 +24,101 @@ class Portfolio extends Component {
             projectFiveVisible: false,
             projectSixVisible:false
         }
+        this.projectOneInfo = null;
+        this.projectOneImage = null;
+        this.projectTwoInfo = null;
+        this.projectTwoImage = null;
+        this.projectThreeInfo = null;
+        this.projectThreeImage = null;
+        this.projectFourInfo = null;
+        this.projectFourImage = null;
+        this.projectFiveInfo = null;
+        this.projectFiveImage = null;
+        this.projectSixInfo = null;
+        this.projectSixImage = null;
+        this.animateFromRight = null;
+        this.animateFromLeft = null;
     }
 
     componentDidMount() {
-       
-        AOS.init();
-        // AOS.refresh();
+    //    PROJECT ONE ANIMATION
+        this.animateFromRight = TweenLite.to(this.projectOneInfo, 1, {
+            opacity: 1,
+            x: "0",
+            y: "0"
+        })
+         this.animateFromLeft = TweenLite.to(this.projectOneImage, 1, {
+             opacity: 1,
+             x: "0",
+             y: "0"
+         })
+        // PROJECT TWO ANIMATION
+        this.animateFromRight = TweenLite.to(this.projectTwoImage, 1, {
+            opacity: 1,
+            x: "0",
+            y:"0",
+            delay:0.4
+        })
+        this.animateFromLeft = TweenLite.to(this.projectTwoInfo, 1, {
+            opacity: 1,
+            x: "0",
+            y: "0",
+            delay: 0.4
+        })
+        // PROJECT THREE ANIMTION
+         this.animateFromRight = TweenLite.to(this.projectThreeInfo, 1, {
+             opacity: 1,
+             x: "0",
+             y: "0",
+             delay:0.8
+         })
+         this.animateFromLeft = TweenLite.to(this.projectThreeImage, 1, {
+             opacity: 1,
+             x: "0",
+             y: "0",
+             delay:0.8
+         })
+        // PROJECT FOUR ANIMATION
+         this.animateFromRight = TweenLite.to(this.projectFourImage, 1, {
+             opacity: 1,
+             x: "0",
+             y: "0",
+             delay: 1.2
+         })
+         this.animateFromLeft = TweenLite.to(this.projectFourInfo, 1, {
+             opacity: 1,
+             x: "0",
+             y: "0",
+             delay: 1.2
+         })
+        // PROJECTFIVE ANIMTION
+        this.animateFromRight = TweenLite.to(this.projectFiveInfo, 1, {
+            opacity: 1,
+            x: "0",
+            y: "0",
+            delay: 1.6
+        })
+        this.animateFromLeft = TweenLite.to(this.projectFiveImage, 1, {
+            opacity: 1,
+            x: "0",
+            y: "0",
+            delay: 1.6
+        })
+
+        // PROJECT SIX ANIMATION
+        this.animateFromRight = TweenLite.to(this.projectSixImage, 1, {
+            opacity: 1,
+            x: "0",
+            y: "0",
+            delay: 2
+        })
+        this.animateFromLeft = TweenLite.to(this.projectSixInfo, 1, {
+            opacity: 1,
+            x: "0",
+            y: "0",
+            delay: 2
+        })
+        
 
     }
 
@@ -130,7 +219,7 @@ class Portfolio extends Component {
           
             <div className="portfolioWrapper">
                 <div className="projectOneWrapper">
-                    <div className="projectOneInfo" data-aos='fade-up'>
+                    <div className="projectOneInfo" ref={div => this.projectOneInfo = div}>
                         <h2 className="projectOne"><span className="projectNum">1.</span> Face Detector App</h2>
                         <h3><span className="langUsed">React</span> <span className="langUsed">CSS3</span> <span className="langUsed">RESTful API</span> </h3>
                             <p className="projectOneDescription">Paste a URL into the detection box, using the Clarifai RESTful API it will recognize any faces within the image. Input an image URL to get started!</p>
@@ -139,11 +228,11 @@ class Portfolio extends Component {
                                     <button className="previewButton" onClick={projectOneVisible}>Preview</button> :
                                     <React.Fragment>
                                         <a href="https://github.com/Dustinbradley45/face-detection" className="previewButton githubButton" target="_blank">Github</a>
-                                        <a href="#" className="previewButton liveButton" target="_blank">Live</a>
+                                        <a href="http://dustinbradley.ca/faceDetect/" className="previewButton liveButton" target="_blank">Live</a>
                                     </React.Fragment>
                             }       
                     </div>
-                    <div className="projectImageContainerOne">
+                    <div className="projectImageContainerOne" ref={div => this.projectOneImage = div}>
                         <img src={brainApp} alt="Face Detector Preview"/>
                         </div>
                 </div>
@@ -160,7 +249,7 @@ class Portfolio extends Component {
                             </div>
 
                 <div className="projectTwoWrapper">
-                    <div className="projectTwoInfo" data-aos="fade-up">
+                    <div className="projectTwoInfo" ref={div => this.projectTwoInfo = div}>
                         <h2 className="projectTwo">2. Planted</h2>
                         <h3><span className="langUsed">HTML5</span> <span className="langUsed">Sass</span> <span className="langUsed">jQuery</span></h3>
                             <p className="projectTwoDescription">Perfect three page PSD Conversion</p>
@@ -174,9 +263,8 @@ class Portfolio extends Component {
                             }       
                       
                         </div>
-                        {/* </div> */}
                        
-                        <div className="projectImageContainerTwo">
+                        <div className="projectImageContainerTwo" ref={div => this.projectTwoImage = div}>
                             <img src={planted} alt="Planted Preview"/>
                         </div>
                  
@@ -193,7 +281,7 @@ class Portfolio extends Component {
                     }
                     </div>
                  <div className="projectThreeWrapper">
-                    <div className="projectThreeInfo">
+                    <div className="projectThreeInfo" ref={div => this.projectThreeInfo = div}>
                     <h2 className="projectThree">3. Broken Telephone</h2>
                     <h3><span className="langUsed">HTML5</span> <span className="langUsed">CSS3</span> <span className="langUsed">RESTful API</span> <span className="langUsed">Paired Programming</span></h3>
                             <p className="projectThreeDescription">Think you know famous quotes? Guess the author after they have been translated to the language of your choosing and back again!</p>
@@ -206,7 +294,7 @@ class Portfolio extends Component {
                                     </React.Fragment>
                             }       
                     </div>
-                    <div className="projectImageContainerThree">
+                    <div className="projectImageContainerThree" ref={div => this.projectThreeImage = div}>
                         <img src={tele} alt="Broken Telephone Preview"/>
                     </div>
                 </div>
@@ -220,7 +308,7 @@ class Portfolio extends Component {
                 </div>
 
                 <div className="projectFourWrapper">
-                    <div className="projectFourInfo">
+                    <div className="projectFourInfo" ref={div => this.projectFourInfo = div}>
                     <h2 className="projectFour">4. RoboFriends Phonebook</h2>
                     <h3><span className="langUsed">React</span>  <span className="langUsed">Redux</span> <span className="langUsed">RESTful API</span></h3>
                         <p className="projectFourDescription">Using the RoboHash API and a simple placeholder API, search through your robofriends information! Originally created with React, refactored using Redux.</p>
@@ -233,7 +321,7 @@ class Portfolio extends Component {
                                     </React.Fragment>
                             }       
                     </div>
-                    <div className="projectImageContainerFour">
+                    <div className="projectImageContainerFour" ref={div => this.projectFourImage = div}>
                         <img src={robots} alt="RoboFriends Preview"/>
                     </div>
                 </div>
@@ -248,7 +336,7 @@ class Portfolio extends Component {
                     </div>
 
                  <div className="projectFiveWrapper">
-                    <div className="projectFiveInfo">
+                    <div className="projectFiveInfo" ref={div => this.projectFiveInfo = div}>
                     <h2 className="projectFive">5. Dine-I-Mite</h2>
                     <h3><span className="langUsed">React</span>  <span className="langUsed">React Router</span> <span className="langUsed">RESTful API</span> <span className="langUsed">Firebase</span> <span className="langUsed">Paired Programming</span> <span className="langUsed">CSS3</span> <span className="langUsed">Firebase</span> </h3>
                             <p className="projectFiveDescription">Take the indecisitveness out of your next dinner date with Dine-I-Mite! Using the Yelp API, Dine-I-Mite helps the indecisive pick a Restaraunt.</p>
@@ -261,7 +349,7 @@ class Portfolio extends Component {
                                     </React.Fragment>
                             }       
                     </div>
-                    <div className="projectImageContainerFive">
+                    <div className="projectImageContainerFive" ref={div => this.projectFiveImage = div}>
                         <img src={dine} alt="Dine-I-Mite Preview"/>
                     </div>
                 </div>
@@ -272,7 +360,7 @@ class Portfolio extends Component {
                 } 
 
                 <div className="projectSixWrapper">
-                    <div className="projectSixInfo">
+                    <div className="projectSixInfo" ref={div => this.projectSixInfo = div}>
                     <h2 className="projectSix">6. Drag Race Battle</h2>
                     <h3><span className="langUsed">React</span> <span className="langUsed">RESTful API</span> <span className="langUsed">Sass</span> </h3>
                         <p className="projectSixDescription">Will you beat out the other queens? Test your luck in this simple battle platform game!</p>
@@ -281,11 +369,11 @@ class Portfolio extends Component {
                                     <button className="previewButton" onClick={projectSixVisible}>Preview</button> :
                                     <React.Fragment>
                                         <a href="https://github.com/Dustinbradley45/drag-race-battle" className="previewButton githubButton" target="_blank">Github</a>
-                                        <a href="#" className="previewButton liveButton" target="_blank">Live</a>
+                                        <a href="http://dustinbradley.ca/DragRace/" className="previewButton liveButton" target="_blank">Live</a>
                                     </React.Fragment>
                             }       
                     </div>
-                    <div className="projectImageContainerSix">
+                    <div className="projectImageContainerSix" ref={div => this.projectSixImage = div}>
                         <img src={dragRace} alt="Drag Race Battle Preview"/>
                     </div>
                 </div>

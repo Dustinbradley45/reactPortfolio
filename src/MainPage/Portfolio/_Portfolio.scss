@@ -46,6 +46,7 @@
 .projectSixInfo {
     width: 50%;
     margin-left:1rem;
+    opacity:0;
     
     h2 {
         @include font(2.5rem, 200);
@@ -68,6 +69,25 @@
     }
 }
 
+.projectOneInfo,
+.projectImageContainerTwo,
+.projectThreeInfo,
+.projectImageContainerFour,
+.projectFiveInfo,
+.projectImageContainerSix {
+    transform:translateX(-10)translateY(10);
+}
+
+.projectImageContainerOne,
+.projectTwoInfo,
+.projectImageContainerThree,
+.projectFourInfo,
+.projectImageContainerFive,
+.projectSixInfo {
+    transform:translateX(10px)translateY(10px);
+
+}
+
 
 .projectImageContainerOne,
 .projectImageContainerTwo,
@@ -79,8 +99,8 @@
     overflow:hidden;
     height: 250px;
     margin:0 auto;
-    margin:1rem;
     border: 8px solid rgba(0,0,0,.8);
+    opacity:0;
 
     img {
         width: 100%;
@@ -93,7 +113,6 @@
 
 .projectLinks {
     position:absolute;
- 
     bottom:0;
    
 }

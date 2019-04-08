@@ -25,6 +25,7 @@ form {
         border:1px solid rgba(0,0,0,0.6);
         background-color:transparent;
         padding-left:5px;
+        border-radius:0;
 
 
            &::placeholder {
@@ -42,7 +43,8 @@ form {
     }
 
     input[type="email"] {
-        width:calc( 80% - .5rem);
+        width:calc( 80% - 0.25rem);
+        font-size:1rem;
     }
 
     .nameBox {
@@ -51,7 +53,7 @@ form {
         
         
         input {
-            width:50%;
+            width:calc(50% - 1rem);
             // margin: .5rem 0;
             
          
