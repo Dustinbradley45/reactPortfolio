@@ -86,8 +86,7 @@ class MainPage extends Component {
 
     
     componentDidMount() {
-         console.log(this.state.height);
-         // Additionally I could have just used an arrow function for the binding `this` to the component...
+
          window.addEventListener("resize", this.updateDimensions);
        
    }
@@ -111,9 +110,7 @@ class MainPage extends Component {
 
         return (
             <div className="mainWrapper">
-                <WindowResize
-                    updateDimensions={updateDimensions}
-                />
+            
             <Particles 
                 params={particlesConfig}
                 className="particles"

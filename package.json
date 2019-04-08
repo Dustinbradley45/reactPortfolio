@@ -2,7 +2,7 @@
   "name": "brick-layout",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://www.dustinbradley.ca/newPage",
+  "homepage": "http://www.dustinbradley.ca/",
   "dependencies": {
     "aos": "^2.3.4",
     "create-react-app": "^2.1.8",

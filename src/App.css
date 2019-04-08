@@ -1263,7 +1263,7 @@ form .nameBox {
 }
 
 form .nameBox input {
-  width: calc(50% - 1rem);
+  width: 50%;
 }
 
 form .nameBox input[id="firstName"] {
@@ -1307,6 +1307,7 @@ form textarea {
   background-color: transparent;
   padding: .5rem;
   border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 0;
 }
 
 form textarea:focus, form textarea:active {
@@ -1336,6 +1337,15 @@ form textarea::placeholder {
   color: black;
   font-size: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.messageSentModal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 1050px) {
