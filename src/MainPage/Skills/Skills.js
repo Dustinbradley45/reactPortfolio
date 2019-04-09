@@ -1,34 +1,19 @@
+// Dependencies
 import React, { Component } from "react";
-import SkillBadges from "./SkillBadges";
 import { TweenLite } from "gsap";
+
+// Components
+import SkillBadges from "./SkillBadges";
 
 class Skills extends Component {
     constructor() {
         super();
-        this.state = {
-            skillBadgeVisible: false
-        }
+
         this.header = null;
         this.subHeading = null;
         this.paragraph = null;
         this.moveInLeft = null;
         this.moveInRight = null;
-    }
-
-     scrollTo = () => {
-         TweenLite.to(window, 2, {
-             scrollTo: "#badgeWrapper"
-         });
-
-     };
-
-    toggleBadges = () => {
-        this.scrollTo()
-        return (
-            this.setState({
-                skillBadgeVisible:!this.state.skillBadgeVisible
-            })
-            )
     }
     
     componentDidMount() {
@@ -52,9 +37,6 @@ class Skills extends Component {
     }
 
     render() {
-       
-        const { toggleBadges } = this;
-        const { skillBadgeVisible } = this.state;
         
         return (
             <div className="skillsWrapper">

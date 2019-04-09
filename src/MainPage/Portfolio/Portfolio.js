@@ -1,8 +1,8 @@
+// DEPENDENCIES
 import React, { Component } from "react";
 import {TweenLite } from "gsap";
 
- 
-
+// COMPONENTS
 import ProjectOne from "./Projects/ProjectOne.js";
 import ProjectTwo from "./Projects/ProjectTwo";
 import ProjectThree from "./Projects/ProjectThree";
@@ -22,14 +22,11 @@ class Portfolio extends Component {
             projectSixVisibleState:false
         }
 
-
- 
-   
         this.animateFromRight = null;
         this.animateFromLeft = null;
     }
 
-
+    // SHOW PROJECT OBJECT
     projectOneVisible = () => {
         this.setState({
             projectOneVisibleState: !this.state.projectOneVisibleState
@@ -66,7 +63,6 @@ class Portfolio extends Component {
     }
 
     // CLOSE OBJECTS
-
     projectOneClose = () => {
         this.setState({
             projectOneVisibleState:false
@@ -132,30 +128,29 @@ class Portfolio extends Component {
             projectSixVisibleState
         } = this.state;
 
-        console.log(this.props.match.width)
         return (
 
             <div className="portfolioWrapper">
                 
             <ProjectOne
-                    projectOneClose={projectOneClose}
-                    projectOneVisible={projectOneVisible}
-                    width={width}
-                    projectOneVisibleState={projectOneVisibleState}
+                projectOneClose={projectOneClose}
+                projectOneVisible={projectOneVisible}
+                projectOneVisibleState={projectOneVisibleState}
+                width={width}
             />
            
             <ProjectTwo
                 projectTwoClose={projectTwoClose}
                 projectTwoVisible={projectTwoVisible}
-                width={width}
                 projectTwoVisibleState={projectTwoVisibleState}
+                width={width}
             />
             
             <ProjectThree
                 projectThreeClose={projectThreeClose}
                 projectThreeVisible={projectThreeVisible}
-                width={width}
                 projectThreeVisibleState={projectThreeVisibleState}
+                width={width}
             />
                 
             <ProjectFour

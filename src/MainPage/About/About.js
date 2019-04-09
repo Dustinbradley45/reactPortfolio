@@ -32,10 +32,7 @@ class About extends Component {
         
     }
 
-    
     render() {
-
-    
         return (
             <div className="aboutWrapper" >
                 <div className="headshotContainer" ref={div => this.headshot = div}>
