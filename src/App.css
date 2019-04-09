@@ -464,12 +464,8 @@ nav p {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-}
-
-.navigationLinks button {
-  -webkit-transition: .1s all linear;
-  transition: .1s all linear;
+  left: 1rem;
+  padding: 1.5rem 0;
 }
 
 .navigationLinks a {
@@ -477,13 +473,29 @@ nav p {
   color: #000;
   padding: 0;
   margin: 0;
+  font-size: 1.25rem;
+  font-weight: 200;
 }
 
-.navigationLinks button:hover,
-.navigationLinks button:focus,
-.navigationLinks button:active {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.navigationLinks a:after {
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+  width: 0;
+  content: "";
+  height: 1px;
+  background-color: black;
+  display: block;
+}
+
+.navigationLinks a:hover::after,
+.navigationLinks a:focus::after,
+.navigationLinks a:active::after {
+  width: 100%;
+}
+
+.NavActiveLinksMain {
+  border-bottom: 1px solid black;
+  font-weight: 300;
 }
 
 @-webkit-keyframes navSlideIn {

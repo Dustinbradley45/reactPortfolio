@@ -1,12 +1,11 @@
 import React, { Component} from "react";
 import { TweenLite, TimelineLite } from "gsap";
+import { NavLink } from "react-router-dom";
 
 class Navigation extends Component {
     constructor() {
         super();
-        this.state = {
-            activeLink: false
-        }
+      
         
         this.linkLoad = null;
         this.navHome = null;
@@ -69,19 +68,22 @@ class Navigation extends Component {
 
     render() {
       
-        const { goToAboutLink, goToHomeLink, goToSkillsLink, goToContactLink, goToPortfolioLink, activeLink} = this.props;
+        const { goToAboutLink, goToHomeLink, goToSkillsLink, goToContactLink, goToPortfolioLink} = this.props;
         
         return (
             <nav>
-                {/* <p>Menu</p> */}
                 <ul className="mainNav">
-                    <li className="navigationLinks" ref={li => this.navHome = li}><button
-                        onClick={goToHomeLink}>Home</button></li>
-                    <li className="navigationLinks" ref={li => this.navAbout = li}><button
-                        onClick={goToAboutLink}>About</button></li>
-                    <li className="navigationLinks" ref={li => this.navSkill = li}><button onClick={goToSkillsLink}>Skills</button></li>
-                    <li className="navigationLinks" ref={li => this.navPortfolio = li}><button onClick={goToPortfolioLink}>Portfolio</button></li>
-                    <li className="navigationLinks" ref={li => this.navContact = li}><button onClick={goToContactLink}>Contact</button></li>
+                    <li className="navigationLinks" ref={li => this.navHome = li}><NavLink exact to="/"
+                        activeClassName = "NavActiveLinksMain"> Home </NavLink></li>
+                    <li className="navigationLinks" ref={li => this.navAbout = li}><NavLink to="/about"
+                        activeClassName="NavActiveLinksMain"
+                        >About</NavLink></li>
+                    <li className="navigationLinks" ref={li => this.navSkill = li}><NavLink to="/skills"
+                    activeClassName = "NavActiveLinksMain"
+                    >Skills</NavLink></li>
+                    <li className="navigationLinks" ref={li => this.navPortfolio = li}><NavLink to="/portfolio"
+                    activeClassName = "NavActiveLinksMain">Portfolio</NavLink></li>
+                    <li className="navigationLinks" ref={li => this.navContact = li}><NavLink to="/contact" activeClassName="NavActiveLinksMain">Contact</NavLink></li>
                 </ul>
             </nav>
         )

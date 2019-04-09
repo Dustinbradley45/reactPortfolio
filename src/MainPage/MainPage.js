@@ -4,11 +4,14 @@ import Navigation from "./Navigation/Navigation";
 import LandingPage from "./LandingPage/LandingPage";
 import About from "./About/About";
 import Skills from "./Skills/Skills";
+import AppRouter from "./../AppRouter/AppRouter";
 import Portfolio from "./Portfolio/Portfolio";
 import Contact from "./Contact/Contact";
 import Socials from "./Socials/Socials";
 import MobileNav from "./Navigation/MobileNav";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import WindowResize from "./WindowResize/WindowResize";
+
 
 
 class MainPage extends Component {
@@ -110,11 +113,13 @@ class MainPage extends Component {
 
         return (
             <div className="mainWrapper">
+                <Router>
             
             <Particles 
                 params={particlesConfig}
                 className="particles"
                 />
+                <AppRouter/>
                 {
                     this.state.width >= 650 ? 
                 <Navigation
@@ -139,7 +144,7 @@ class MainPage extends Component {
                         />
                     
                 }
-            {
+            {/* {
                     showLanding === true ? 
                         <LandingPage /> :
                             goToAbout === true ?
@@ -153,10 +158,11 @@ class MainPage extends Component {
                                             width={width}
                                         /> :
                                         null
-                }
+                } */}
                 <div className="socialsWrapper">
                     <Socials/>
-                </div>    
+                    </div> 
+                </Router>    
             </div>
         )
     }

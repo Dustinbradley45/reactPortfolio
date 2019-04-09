@@ -52,6 +52,8 @@ class ProjectSix extends Component {
                         <img src={dragRace} alt="Drag Race Battle Preview"/>
                     </div>
                 </div>
+
+                
                  {
                      projectSixVisibleState === true ?
                         <ProjectSixObject

@@ -81,34 +81,42 @@ nav {
 
 
 .navigationLinks {
-    //    position:absolute;
     z-index: -1;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-
-
-
-
-    button {
-        transition: .1s all linear;
-
+    left: 1rem;
+    padding: 1.5rem 0;
+    
+    a {
+        text-decoration: none;
+        color: #000;
+        padding:  0;
+        margin: 0;
+        @include font(1.25rem, 200);
+        
+        &:after {
+            transition: .2s all linear;
+            width:0;
+            content:"";
+            height:1px;
+            background-color:black;
+            display:block;
+        }
     }
 
-    a {
-    text-decoration: none;
-    color: #000;
-    padding: 0;
-    margin: 0;
 }
 
+.navigationLinks a:hover::after ,
+.navigationLinks a:focus::after ,
+.navigationLinks a:active::after  {
+     width:100%;
 }
 
-.navigationLinks button:hover,
-.navigationLinks button:focus,
-.navigationLinks button:active {
-    transform: scale(1.2);
+.NavActiveLinksMain {
+    border-bottom:1px solid black;
+    font-weight:300;
+    
 }
 
 

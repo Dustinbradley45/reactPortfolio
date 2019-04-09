@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import LoadingScreen from "./LoadingScreen/LoadingScreen.js";
 import './App.css';
 import MainPage from "./MainPage/MainPage.js";
