@@ -494,8 +494,12 @@ nav p {
 }
 
 .NavActiveLinksMain {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   font-weight: 300;
+}
+
+.NavActiveLinksMobile {
+  border-bottom: 1px solid white;
 }
 
 @-webkit-keyframes navSlideIn {

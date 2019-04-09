@@ -4,12 +4,6 @@ import MobileNavList from "./MobileNavList";
 const MobileNav = (props) => {
     
     const {
-        goToAboutLink,
-        goToHomeLink,
-        goToSkillsLink,
-        goToContactLink,
-        goToPortfolioLink,
-        activeLink,
         navVisible,
         toggleNav
     } = props;
@@ -41,11 +35,7 @@ const MobileNav = (props) => {
                      
                         <MobileNavList
                             toggleNav={toggleNav}
-                            goToAboutLink={goToAboutLink}
-                            goToHomeLink={goToHomeLink}
-                            goToSkillsLink={goToSkillsLink}
-                            goToContactLink={goToContactLink}
-                            goToPortfolioLink={goToPortfolioLink}/> :
+                          /> :
                         null
                         
                 }

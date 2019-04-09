@@ -131,6 +131,8 @@ class Portfolio extends Component {
             projectFiveVisibleState,
             projectSixVisibleState
         } = this.state;
+
+        console.log(this.props.match.width)
         return (
 
             <div className="portfolioWrapper">

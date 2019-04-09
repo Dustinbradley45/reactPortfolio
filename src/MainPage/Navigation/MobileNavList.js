@@ -1,5 +1,6 @@
 import React from "react";
 import Particles from 'react-particles-js';
+import { NavLink } from "react-router-dom";
 
 const particlesConfig = {
     "particles": {
@@ -112,16 +113,8 @@ const particlesConfig = {
     "retina_detect": true
 }
 
-const MobileNavList = (props) => {
-     const {
-         goToAboutLink,
-         goToHomeLink,
-         goToSkillsLink,
-         goToContactLink,
-         goToPortfolioLink,
-         activeLink,
-         toggleNav
-     } = props;
+const MobileNavList = ({ toggleNav }) => {
+
     return (
         
         <div className="navListHolder">
@@ -131,13 +124,17 @@ const MobileNavList = (props) => {
                 />
             <nav>
                 <ul className="mobileNavList">
-                    <li className="mobileNavigationLinks" ><button
-                        onClick={goToHomeLink}>Home</button></li>
-                    <li className="mobileNavigationLinks" ><button
-                        onClick={goToAboutLink}>About</button></li>
-                    <li className="mobileNavigationLinks" ><button onClick={goToSkillsLink}>Skills</button></li>
-                    <li className="mobileNavigationLinks"><button onClick={goToPortfolioLink}>Portfolio</button></li>
-                    <li className="mobileNavigationLinks"><button onClick={goToContactLink}>Contact</button></li>
+                    <li className="mobileNavigationLinks" ><NavLink
+                        exact to="/" activeClassName="NavActiveLinksMobile" onClick={toggleNav}>Home</NavLink></li>
+                    
+                    <li className="mobileNavigationLinks" ><NavLink
+                        to="/about" activeClassName="NavActiveLinksMobile" onClick={toggleNav} >About</NavLink></li>
+                    
+                    <li className="mobileNavigationLinks" ><NavLink to="/skills" activeClassName="NavActiveLinksMobile" onClick={toggleNav}>Skills</NavLink></li>
+
+                    <li className="mobileNavigationLinks"><NavLink to="/portfolio" activeClassName="NavActiveLinksMobile" onClick={toggleNav}>Portfolio</NavLink></li>
+
+                    <li className="mobileNavigationLinks"><NavLink to="/contact" activeClassName="NavActiveLinksMobile" onClick={toggleNav}> Contact</NavLink></li>
                 </ul>
             </nav>
         </div> 

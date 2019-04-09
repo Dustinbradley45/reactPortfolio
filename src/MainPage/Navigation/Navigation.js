@@ -61,14 +61,9 @@ class Navigation extends Component {
                 delay:2.6,
             },
             0.1);
-        
-        
-
     }
 
     render() {
-      
-        const { goToAboutLink, goToHomeLink, goToSkillsLink, goToContactLink, goToPortfolioLink} = this.props;
         
         return (
             <nav>

@@ -119,7 +119,9 @@ class MainPage extends Component {
                 params={particlesConfig}
                 className="particles"
                 />
-                <AppRouter/>
+                    <AppRouter 
+                        width={this.state.width}
+                />
                 {
                     this.state.width >= 650 ? 
                 <Navigation
