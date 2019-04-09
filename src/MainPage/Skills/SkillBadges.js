@@ -12,7 +12,6 @@ import Sass from "./../../Assets/devicon-master/icons/sass/sass-original.svg";
 import npm from "./../../Assets/devicon-master/icons/npm/npm-original-wordmark.svg";
 import { TweenLite } from "gsap";
 
-
 class SkillBadges extends Component {
     constructor() {
         super();

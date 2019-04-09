@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
-class ProjectOne extends Component {
+class ProjectOneObject extends Component {
     constructor() {
         super();
         this.state = {
             width:"100%"
-
         }
-
     }
 
     desktop = () => {
@@ -32,8 +30,8 @@ class ProjectOne extends Component {
 
     render() {
         const { tablet, desktop, mobile} = this;
-        const { width } = this.state;
         const { projectOneClose } = this.props;
+        const { width } = this.state;
 
         return (
             <div className="projectOneObjectWrapper">
@@ -52,4 +50,4 @@ class ProjectOne extends Component {
     }
 }
 
-export default ProjectOne;
+export default ProjectOneObject;

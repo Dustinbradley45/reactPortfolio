@@ -135,13 +135,6 @@ class App extends Component {
   render() {
     const { loadingScreen, toHome } = this.state;
     const { goToMain } = this;
-    
-    // setTimeout(() => {
-    //   this.setState({
-    //     loadingScreen: false
-    //   })
-      
-    // }, 3000);
 
     return (
 

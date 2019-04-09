@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class ProjectSix extends Component {
+class ProjectSixObject extends Component {
     constructor() {
         super();
         this.state = {
@@ -56,5 +56,5 @@ class ProjectSix extends Component {
     }
 }
 
-export default ProjectSix;
+export default ProjectSixObject;
                    
