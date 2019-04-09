@@ -1,12 +1,7 @@
 import React from "react";
 import MobileNavList from "./MobileNavList";
 
-const MobileNav = (props) => {
-    
-    const {
-        navVisible,
-        toggleNav
-    } = props;
+const MobileNav = ({navVisible, toggleNav }) => {
 
         return (
         <React.Fragment>

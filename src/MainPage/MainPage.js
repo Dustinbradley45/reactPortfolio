@@ -44,10 +44,12 @@ class MainPage extends Component {
         const { toggleNav } = this;
 
         return (
-            <div className="mainWrapper">
+            <React.Fragment>
             <Particles 
-                params={particlesConfig}
+                    params={particlesConfig}
+                    className="particles"
                 />
+            <div className="mainWrapper">
             <Router>
             
                 <AppRouter 
@@ -72,7 +74,8 @@ class MainPage extends Component {
                     <Socials/>
                 </div> 
             </Router>    
-            </div>
+                </div>
+            </React.Fragment>
         )
     }
 

@@ -452,11 +452,25 @@ nav p {
   list-style: none;
 }
 
-.mobileNavList button {
+.mobileNavList li {
+  padding: 1rem 0;
+}
+
+.mobileNavList a {
   border: 0;
   background-color: transparent;
   font-size: 1.5rem;
   font-weight: 200;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+}
+
+.mobileNavList a:hover,
+.mobileNavList a:focus,
+.mobileNavLista:active {
+  color: white;
 }
 
 .navigationLinks {
@@ -491,15 +505,6 @@ nav p {
 .navigationLinks a:focus::after,
 .navigationLinks a:active::after {
   width: 100%;
-}
-
-.NavActiveLinksMain {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
-  font-weight: 300;
-}
-
-.NavActiveLinksMobile {
-  border-bottom: 1px solid white;
 }
 
 @-webkit-keyframes navSlideIn {
@@ -687,30 +692,20 @@ nav p {
   z-index: 300;
 }
 
-.mobileNavList button {
-  color: rgba(255, 255, 255, 0.7);
-  padding: 2rem;
-}
-
-.mobileNavList button::before,
-.mobileNavList button::after {
+.mobileNavList a::before,
+.mobileNavList a::after {
   content: "";
   width: 0px;
   height: 1px;
   display: block;
   background-color: rgba(255, 255, 255, 0.7);
-  margin-top: 5px;
-  -webkit-transition: .1s all linear;
-  transition: .1s all linear;
+  margin-top: 3px;
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
 }
 
-.mobileNavList button::before {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.mobileNavList button:hover::after,
-.mobileNavList button:focus::after {
+.mobileNavList a:hover::after,
+.mobileNavList a:focus::after {
   color: white;
   width: 100%;
 }
@@ -737,6 +732,15 @@ nav p {
     -webkit-transform: rotate(-45deg) translateX(-1px);
             transform: rotate(-45deg) translateX(-1px);
   }
+}
+
+.NavActiveLinksMain {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+  font-weight: 300;
+}
+
+.NavActiveLinksMobile {
+  border-bottom: 2px solid white;
 }
 
 .landingPageWrapper {

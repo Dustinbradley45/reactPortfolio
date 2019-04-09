@@ -7,8 +7,6 @@ import Portfolio from "./../MainPage/Portfolio/Portfolio";
 import Contact from "./../MainPage/Contact/Contact";
 
 const AppRouter = (props) => {
-
-    // Trouble with getting the props to the portfolio so that I can check screen width. That way we can render the buttons accurately for object preview
     
     return (
       
@@ -16,10 +14,11 @@ const AppRouter = (props) => {
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/skills" component={Skills} />
-                <Route exact path="/portfolio" render={(props) => <Portfolio
-                    {...props}
-                    />}
-                />
+                <Route exact path="/portfolio"
+                    render={() => <Portfolio
+                        {...props}
+                        />}
+                    />
                 <Route exact path="/contact" component={Contact}/>
             </Switch>
        
